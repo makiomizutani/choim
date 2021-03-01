@@ -1,0 +1,2 @@
+class MovieJunle < ApplicationRecord
+end

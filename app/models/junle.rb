@@ -1,0 +1,2 @@
+class Junle < ApplicationRecord
+end

@@ -1,0 +1,35 @@
+<div class = "movie-index-wrapper">
+  <div class = 'container'>
+    <% @movies.each do |movie| %>
+    <div class = "movie-wrapper">
+      <div class = "movie-wrapper-up">
+        <div class = "movie-image">
+        <%#= image_tag movie.image.url unless movie.image.nil? %>
+        <%= movie.image %>
+        </div>
+        <div class = "movie-description">
+          <h1 class = "movie-name">
+            <%= movie.name %>
+          </h1>
+          <p class= "movie-open-house">
+            <%= movie.open_house %>
+          </p>
+          <p class = "running-time">
+            <%= movie.running_time %>
+          </p>
+          <p class = "movie-junle">
+            <%= movie.junle_id %>
+          </p>
+          <p class = "movie-director">
+            <%= movie.director_id %>
+          </p>
+        </div>
+      </div>
+      <div class = "movie-summary">
+        <%= movie.summary %>
+      </div>
+    </div>
+    <% end %>
+    <h1 class = "next-page">次のページへ</h1>
+  </div>
+</div>

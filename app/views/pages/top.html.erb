@@ -1,0 +1,31 @@
+<body>
+  
+
+<div class = top-wrapper>
+  <div class = "container">
+    <div class = "main">
+      
+    </div>
+      <div class = "topic-movie">
+        <h1>現在話題の映画</h1>
+      </div>
+      <div class = "top-index-wrapper">
+      <% @movies[0..9].each do | movie | %>
+      <div class = "movie-index-wrapper">
+        <div class = "movie-index">
+           <%= image_tag movie.image.url, size: '160x192' %>
+          <h1 class = "movie-index-name">
+          <%= movie.name %>
+          </h1>
+      　</div>
+      </div>
+      <% end %>
+    </div>
+    <div class = "movie-index-link">
+      <h1><%= link_to "映画一覧へ", movies_path %></h1>
+    </div>
+  </div>
+</div>
+
+
+</body>

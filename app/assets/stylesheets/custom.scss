@@ -1,0 +1,240 @@
+//z
+body{
+  margin: 0;
+  font-family:"Hiragino Kaku Gothic ProN";
+}
+ul{
+  list-style:none;
+}
+//header
+.header-wrapper{
+  height:110px;
+  width:100vw;
+}
+  .header-up{
+    height:20px;
+    width:100%;
+    background-color:#050505;
+  }
+    .menu-up{
+      display:flex;
+      justify-content:flex-end;
+      font-size:14px;
+    }
+    .line-right{
+      border-right:solid white 0.5px;
+      padding-right:30px;
+      margin-left:30px;
+    }
+    
+    .line-right-logout{
+      border-right:solid white 0.5px;
+      padding-right:20px;
+      margin-left:20px;
+    }
+    .line-right-end{
+      margin-left:30px;
+      margin-right:14px;
+    }
+    .line-right-end-logout{
+      margin-left:20px;
+    }
+    
+    .menu-up a {
+      color:white;
+      opacity:0.7;
+    }
+    
+  .header-down{
+    height:90px;
+    width:100vw;
+    background-color:#FFEB00;
+    display:flex;
+    align-items:center;
+  }
+ 
+  .rogo-img{
+    height:50px;
+    width:105px;
+    margin-left:300px;
+    background-size:contain;
+    
+  }
+  .search-form{
+    height:28px;
+    width:370px;
+    margin-left:28px;
+    border:solid 0.2px;
+    
+  }
+  
+  .menu-down-left{
+    margin-left:7px;
+    font-size:14px;
+    color:#766060;
+  }
+  .menu-down-right{
+    margin-left:2px;
+    font-size:14px;
+    color:#766060;
+  }
+  .search-btn{
+    margin-left:28px;
+    width:70px;
+    height:28px;
+    background:#FFFFFF;
+    border:solid 0.5px;
+  }
+//footer
+.footer{
+  height:140px;
+  width:100vw;
+  margin-top:50px;
+  background-color:#050505;
+}
+//topページ
+.top-wrapper{
+  width:100vw;
+}
+  .container{
+    width:873px;
+  }
+  .main{
+    background-image: url('movie-house.jpg');
+    height:490px;
+    width:873px;
+  }
+  .main-picture{
+    height:490px;
+    width:873px;
+    text-align:center;
+  }
+  .topic-movie{
+    margin-top:35px;
+    margin-left:10px;
+    font-size:25px;
+    opacity:0.7;
+  }
+  .movie-index-wrapper{
+  margin-top:40px;
+  width:160px;
+  margin-bottm:10px;
+  
+  
+}
+  .movie-index{
+    width:160px;
+  }
+  
+  .movie-index-name{
+    font-size:14px;
+    text-align:center;
+    margin-top:20px;
+  }
+  
+.movie-index-link{
+  text-align:right;
+  
+}
+.movie-index-link a{
+  font-size:18px;
+  color:#170505;
+  opacity:0.5;
+}
+
+//登録form
+.entry-name{
+  text-align:center;
+  font-size:24px;
+  margin-top:50px;
+  opacity:0.7;
+}
+.new-member-entry-form{
+  background-color:#F8F8F8;
+  margin-top:50px;
+  padding-top:30px;
+  
+  
+}
+.form-group{
+  margin-bottom:30px;
+}
+.new-label{
+  display:block;
+  font-size:20px;
+  opacity:0.5;
+  margin-left:30px;
+  
+}
+.new-form{
+  width:400px;
+  height:30px;
+  margin-top:5px;
+ //text-align:center;効かない？
+}
+ .new-area{
+   width:400px;
+  height:200px;
+  margin-top:5px;
+}
+.btn-block{
+  width:40%;
+  height:70px;
+  margin-top:100px;
+  border-style: solid;
+  //f.submitのwidt100%hは解除できない？
+  margin-bottom:30px;
+  font-size:20px;
+  font-weight:bold;
+  opacity:0.7;
+}
+.topic-movie{
+  margin-top:30px;
+}
+.topic-movie h1{
+  font-size:24px;
+}
+.top-index-wrapper{
+  width:874px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+ 
+}
+
+  
+  //movie-index
+  .movie-index-wrapper{
+  }
+.movie-wrapper{
+  width:653px;
+  text-align:center;
+  border:solid 16px #9ED87A ;
+  margin-left:210px;
+  margin-bottom:30px;
+}
+  .movie-wrapper-up{
+    margin-top:10px;
+    width:100%;
+    display:flex;
+  }
+    .movie-image{
+      width:280px;
+    }
+  .movie-description{
+    margin-left:20px;
+    text-align:left;
+  }
+  .movie-description h1{
+    margin-top:5px;
+    font-size:16px;
+    }
+  .movie-summary{
+    margin-top:10px;
+    margin-bottom:20px;
+  }
+    
+
+
+
