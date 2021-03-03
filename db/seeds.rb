@@ -10,244 +10,269 @@ Movie.create!(
     {
       name:'スパイダーマン',
       open_house:'2002/05/11',
-      running_time:'121分',
+      running_time:'121',
       junle_id:'1',
       director_id:'1',
       screen_writer:'デヴィット・コープ',
       summary:'',
-      image:File.open('./app/assets/images/spiderman.jpg')    
+      image:File.open('./app/assets/images/spiderman.jpg'),
+      rating:'3.7'
     },
     {
       name:'スパイダーマン２',
       open_house:'2002/07/10',
-      running_time:'127分',
+      running_time:'127',
       junle_id:'1',
       director_id:'1',
       screen_writer:'アルヴィン・サージェント',
       summary:'',
-      image:File.open('./app/assets/images/Spiderman2-.jpg')
+      image:File.open('./app/assets/images/Spiderman2-.jpg'),
+      rating:'3.6'
     },
     {
       name:'スパイダーマン３',
       open_house:'2007/05/01',
-      running_time:'139分',
+      running_time:'139',
       junle_id:'1',
       director_id:'1',
       screen_writer:'サム・ライミ',
       summary:'ブラック・スパイダーマンとなったピーターは、その黒いスーツがもたらす新たなパワーに酔いしれ、怒りを制御することができない。 彼に何が起こったのか---? 慕っていた叔父を殺した犯人への復讐。 スパイダーマンを父の仇と信じ込む親友ハリーとの決闘。 未来を誓い合った恋人メリー・ジェーンとの心のすれ違い。 そこに現れるグウェンとの微妙な恋愛関係。 悲しき運命の連鎖が、彼を究極の戦いへと導く。 さらに新たな脅威ヴェノムがスパイダーマンに襲いかかる! 戦いは、ニュー・ゴブリン、サンドマンを巻き込み、熾烈さを増していく・・・・。',
-      image:File.open('./app/assets/images/spiderman3.jpg')
+      image:File.open('./app/assets/images/spiderman3.jpg'),
+      rating:'3.6'
     },
     {
       name:'アメイジングスパイダーマン',
       open_house:'2012/06/30',
-      running_time:'136分',
+      running_time:'136',
       junle_id:'1',
       director_id:'2',
       screen_writer:'ジェームズ・ヴァンダービルト',
       summary:'ピーター・パーカーは、ちょっとサエナい高校生。正義感は強いが、女子にはモテない。両親は彼が幼いときに謎の失踪をとげ、以来ベンとメイの伯父夫婦に育てられてきた。ある日ピーターは父の消息を探るため、オズコープ社で遺伝子を研究するコナーズ博士を訪ね、実験中の蜘蛛にかまれてしまう。翌日、ピーターの人生は激変する。蜘蛛のように自由自在に動き回れるパワーとスピード、超感覚で危険を感知���る“スパイダーセンス”を身につけたのだ。ピーターはその能力で悪と闘い、“スパイダーマン”と呼ばれるスーパーヒーローとなる。',
-      image:File.open('./app/assets/images/amaizing-spiderman.jpg')
+      image:File.open('./app/assets/images/amaizing-spiderman.jpg'),
+      rating:'3.6'
     },
     {
       name:'アメイジングスパイダーマン２',
       open_house:'2014/04/25',
-      running_time:'142分',
+      running_time:'142',
       junle_id:'1',
       director_id:'2',
       screen_writer:'アレックス・カーツマン',
       summary:'スパイダーマンとしてニューヨークの平和を守り、ひとりの男性として恋人グウェンとの愛を育む、忙しくも充実した日々を送っていたピーター・パーカー。しかし、彼の旧友で巨大企業オズコープ社の御曹司であるハリー・オズボーンが街に戻ってきたことから、ピーターの生活は少しずつ狂い始める。一方、オズコープ社に勤める冴えない電気技師マックスは、感電事故に巻き込まれたことで、突如電撃を発する超人・エレクトロに変貌してしまう・・・！ 平凡な青年であることと、スパイダーマンとしての大いなる責任の間で葛藤してきたピーターに、更なる試練が襲い掛かる。',
-      image:File.open('./app/assets/images/amaizing-spiderman2.jpg')
+      image:File.open('./app/assets/images/amaizing-spiderman2.jpg'),
+      rating:'3.7'
     },
     {
       name:'スパイダーマン ホームカミング',
       open_house:'2017/08/11',
-      running_time:'133分',
+      running_time:'133',
       junle_id:'1',
       director_id:'12',
       screen_writer:'ジョン・フランシス・デイリー',
       summary:'ニューヨーク。15歳のピーター・パーカーはスパイダーマンだ。部活のノリで街を救う、ヒーロー気取りの高校生。そんなピーターの能力を見出し、真のヒーローとしての“道”へと導こうとするのがアイアンマンことトニー・スターク。スタークに新しいスーツまで作ってもらい興奮するピーターは、自分の力を認めてもらおうと街に飛び出す日々。そんなある日、巨大な翼で飛行する怪物が街に突如現れる。ピーターはここぞとばかり、ニューヨークの平和のために怪物退治に乗り出そうとするが、スタークに「アベンジャーズに任せておけ」と止められてしまう。「ガキ扱いは、ゴメンだ！」とピーターはその忠告を聞かずに戦いに挑むが―。',
-      image:File.open('./app/assets/images/spiderman homecomming.jpg')
+      image:File.open('./app/assets/images/spiderman homecomming.jpg'),
+      rating:'3.9'
     },
     {
       name:'スパイダーマン　ファーフロームホーム',
       open_house:'2019/06/28',
-      running_time:'130分',
+      running_time:'130',
       junle_id:'1',
       director_id:'12',
       screen_writer:'クリス・マケナ',
       summary:'“ホーム”であるニューヨークを離れ、舞台はヨーロッパへ。ピーター（トム�����ホランド）は親友のネッド（ジェイコブ・バタロン）やMJ（ゼンデイヤ）たちと2週間の夏休み旅行へ出かける。そこでピーターの前に突如現れるのは、S.H.I.E.L.D.の長官、ニック・フューリー（サミュエル・L・ジャクソン）だ。「出番だぞ。私と共に戦う覚悟はあるか？」とピーターに告げるが・・。',
-      image:File.open('./app/assets/images/spiderman-far-from-home.jpg')
+      image:File.open('./app/assets/images/spiderman-far-from-home.jpg'),
+      rating:'4.1'
     },
     {
       name:'スターウォーズ ファントムメナス',
       open_house:'1999/07/10',
-      running_time:'133分',
+      running_time:'133',
       junle_id:'5',
       director_id:'3',
       screen_writer:'ジョージ・ルーカス',
       summary:'遠い昔、はるかかなたの銀河系で繰り広げられる壮大な物語＜サーガ＞の第1章「スター・ウォーズ　エピソード1／ファントム・メナス」デジタルで登場。ジェダイ・マスターのクワイ＝ガン・ジンとその弟子オビ＝ワン・ケノービの二人は、平和な惑星ナブーの危機から女王パドメ・アミダラを救出する。その後惑星タトゥイーンへ立ち寄った二人は、9歳の少年アナキン・スカイウォーカーと出会い、その少年に特別な力＜フォース＞を感じとるのだが、その頃、謎の敵ダース・モールがジェダイ抹殺の為に動いていた…。',
-      image:File.open('./app/assets/images/starwars-ep1.jpg')
+      image:File.open('./app/assets/images/starwars-ep1.jpg'),
+      rating:'3.8'
     },
     {
       name:'スターウォーズ クローンの攻撃',
       open_house:'2002/07/13',
-      running_time:'142分',
+      running_time:'142',
       junle_id:'5',
       director_id:'3',
       screen_writer:'ジョナサン・ヘイルズ',
       summary:'アナキン・スカイウォーカーの成長と変化、そして戦いを描く「スター・ウォーズ　エピソード２／クローンの攻撃」デジタルで登場。惑星ナブーの戦いから10年後。アナキンはパドメ・アミダラが命を狙われた為護衛に付いていたが、お互いに惹かれ合う。一方、銀河共和国は、昔ジェダイであったドゥークー伯爵により新たな脅威にさらされていく。そして、オビ＝ワン・ケノービはある惑星で大量のクローンが製造されている光景を目にする。やがて、アナキンとパドメ、そしてオビ=ワンはクローン戦争に引き込まれていく。',
-      image:File.open('./app/assets/images/starwars-ep2.jpg')
+      image:File.open('./app/assets/images/starwars-ep2.jpg'),
+      rating:'3.8'
     },
     {
       name:'スターウォーズ　シスの復習',
       open_house:'2005/07/09',
-      running_time:'141分',
+      running_time:'141',
       junle_id:'5',
       director_id:'3',
       screen_writer:'ジョージ・ルーカス',
       summary:'ダークサイドの強力な力を描く「スター・ウォーズ　エピソード３／シスの復讐」デジタルで登場。クローン大戦から��年、ジェダイはクローン軍を率いて、各地でドロイド軍と戦っていた。パルパティーン最高議長を拉致する事件が発生し、オビ＝ワン・ケノービとアナキン・スカイウォーカーが救出に向かい、アナキンの活躍で救出に成功する。しかし、アナキンはパドメとの秘かな愛とジェダイへの忠誠で悩み苦しむ。そしてシスのダークサイドへ誘惑されていくのであった。',
-      image:File.open('./app/assets/images/starwars-ep3.png')
+      image:File.open('./app/assets/images/starwars-ep3.png'),
+      rating:'4.0'
     },
     {
       name:'スターウォーズ　新たなる希望',
       open_house:'1978/07/01',
-      running_time:'121分',
+      running_time:'121',
       junle_id:'５',
       director_id:'3',
       screen_writer:'ジョージ・ルーカス',
       summary:'ルーク・スカイウォーカーの銀河を巡る冒険がはじまる「スター・ウォーズ　エピソード４／新たなる希望」デジタルで登場。銀河帝国樹立から19年。砂漠の惑星タトゥイーンでルークは、長年隠れ住んでいたオビ=ワン・ケノービと出会い反乱軍の戦いに加わることを決意する。ダース・ベイダー率いる邪悪な帝国軍に捕らわれたレイア姫を救出するため、オビ=ワンは若きルークをジェダイへ導いていく。',
-      image:File.open('./app/assets/images/starwars-ep4.png')
+      image:File.open('./app/assets/images/starwars-ep4.png'),
+      rating:'3.8'
     },
     {
       name:'スターウォーズ 帝国の逆襲',
       open_house:'1980/06/28',
-      running_time:'124分',
+      running_time:'124',
       junle_id:'5',
       director_id:'10',
       screen_writer:'リー・ブラケット、ローレンス・カスダン',
       summary:'デス・スターを破壊された帝国軍は反乱軍を容赦なく追い続けていた。反乱軍が氷の惑星ホスから撤退すると、ルーク・スカイウォーカーは惑星ダゴバに行く。そこには隠れ暮らしていた伝説のジェダイ・マスターのヨーダがいたのだ。一方、ダース・ベイダーはベスピンのクラウド・シティで若きスカイウォーカーをダークサイドへ引き込もうと目論む。',
-      image:File.open('./app/assets/images/starwars-ep5.jpg')
+      image:File.open('./app/assets/images/starwars-ep5.jpg'),
+      rating:'3.9'
     },
     {
       name:'スターウォーズ ジェダイの帰還',
       open_house:'1997/07/26',
-      running_time:'137分',
+      running_time:'137',
       junle_id:'5',
       director_id:'11',
       screen_writer:'ジョージ・ルーカス',
       summary:'',
-      image:File.open('./app/assets/images/starwars-ep6.png')
+      image:File.open('./app/assets/images/starwars-ep6.png'),
+      rating:'3.9'
     },
     {
       name:'スターウォーズ　フォースの覚醒',
       open_house:'2015/12/18',
-      running_time:'136分',
+      running_time:'136',
       junle_id:'5',
       director_id:'4',
       screen_writer:'j・j・エイブラムス',
       summary:'世界で愛され続けるSFアドベンチャー「スター・ウォーズ」シリーズの第7作目。『ジェダイの帰還』の30年後、帝国軍の残党���フ������スト・オーダー」が台頭するなか、姿を消したとされる最後のジェダイ・ルークの手がかりを探す。',
-      image:File.open('./app/assets/images/starwars-ep7.jpg')
+      image:File.open('./app/assets/images/starwars-ep7.jpg'),
+      rating:'3.9'
     },
     {
       name:'スターウォーズ 最後のジェダイ',
       open_house:'2017/12/15',
-      running_time:'152分',
+      running_time:'152',
       junle_id:'5',
       director_id:'9',
       screen_writer:'ライアン・ジョンソン',
       summary:'『スター・ウォーズ／フォースの覚醒』のその後を描く、誰も観たことのない衝撃の「スター・ウォーズ」。ついにフォ ースを覚醒させたレイと、ダース・ベイダーを継ごうとするカイロ・レン。伝説のジェダイ、ルーク・スカイウォーカーの出現は何をもたらすのか？そして、“光”と“闇”の間で揺れ動く二人を待ち受ける“衝撃の運命”とは？',
-      image:File.open('./app/assets/images/starwars-ep8.jpg')
+      image:File.open('./app/assets/images/starwars-ep8.jpg'),
+      rating:'3.7'
     },
     {
       name:'スターウォーズ スカイウォーカーの夜明け',
       open_house:'2019/12/20',
-      running_time:'142分',
+      running_time:'142',
       junle_id:'5',
       director_id:'4',
       screen_writer:'j・j・エイブラムス',
       summary:'はるか彼方の銀河系で繰り広げられる、スカイウォーカー家を中心とした壮大な<サーガ>の結末は、“光と闇”のフォースをめぐる最後の決戦に託された──祖父ダース・ベイダーの遺志を受け継いだカイロ・レン。伝説のジェダイ、ルーク・スカイウォーカーの想いを引き継ぎ、フォースの力を覚醒させたレイ。そして、R2-D2、C-3PO、BB-8 ら忠実なドロイドと共に銀河の自由を求めて戦い続ける、生きる英雄レイア将軍、天才パイロットのポー、元ストームトルーパーのフィンら、レジスタンスの同志たち...。さらに、ハン・ソロの永遠の好敵手ランド・カルリジアンもエピソード・シリーズでは『スター・ウォーズ エピソード 6/ジェダイの帰還』以来の再登場。果たして、彼らを待ち受ける運命とは?そして、いかなるエンディングを迎えるのか?',
-      image:File.open('./app/assets/images/starwars-ep9.jpg')
+      image:File.open('./app/assets/images/starwars-ep9.jpg'),
+      rating:'3.9'
     },
     
     {
       name:'ハリー・ポッターと賢者の石',
       open_house:'2001/12/01',
-      running_time:'152分',
+      running_time:'152',
       junle_id:'11',
       director_id:'5',
       screen_writer:'スティーブ・クローヴス',
       summary:'全世界に魔法をかけたファンタジー・アドベンチャーの最高傑作、第1章。 孤独な日々を送る少年、ハリー・ポッターの下に「ホグワーツ魔法魔術学校への入学を許可します」という手紙が届き…。',
-      image:File.open('./app/assets/images/harrypotter-1.jpg')
+      image:File.open('./app/assets/images/harrypotter-1.jpg'),
+      rating:'4.0'
     },
     {
       name:'ハリーポッターと秘密の部屋',
       open_house:'2002/11/23',
-      running_time:'161分',
+      running_time:'161',
       junle_id:'11',
       director_id:'5',
       screen_writer:'スティーブ・クローヴス',
       summary:'史上最強のファンタジー、2年目の冒険が始まる！！もっと冒険、もっと勇気、もっと魔法----',
-      image:File.open('./app/assets/images/harrypotter-2.jpg')
+      image:File.open('./app/assets/images/harrypotter-2.jpg'),
+      rating:'3.8'
     },
     {
       name:'ハリー・ポッターとアズカバンの囚人',
       open_house:'2004/06/26',
-      running_time:'142分',
+      running_time:'142',
       junle_id:'11',
       director_id:'6',
       screen_writer:'スティーブ・クローブス',
       summary:'13歳になったハリーを待ち受けるのは、不吉な死の予言さえ告げられる中、ハリーが直面する両親の死の真相。今まで見えなかったものが見え始め、わからなかったことがわかり始める第3章。',
-      image:File.open('./app/assets/images/harrypotter-3.jpeg')
+      image:File.open('./app/assets/images/harrypotter-3.jpeg'),
+      rating:'3.9'
     },
    
     {
       name:'ハリー・ポッターと炎のゴブレット',
       open_house:'2005/11/26',
-      running_time:'157分',
+      running_time:'157',
       junle_id:'11',
       director_id:'7',
       screen_writer:'スティーブ・クローブス',
       summary:'暗黒の支配者、ついに復活―。史上最大のスケールで描かれる激動の第4章！',
-      image:File.open('./app/assets/images/harrypotter-4.jpg')
+      image:File.open('./app/assets/images/harrypotter-4.jpg'),
+      rating:'3.8'
     },
     {
       name:'ハリー・ポッター不死鳥の騎士団',
       open_house:'2007/07/20',
-      running_time:'138分',
+      running_time:'138',
       junle_id:'11',
       director_id:'8',
       screen_writer:'マイケル・ゴルデンバーグ',
       summary:'壮絶なバトルがついに始まる！ハリーの本当の秘密、解禁。',
-      image:File.open('./app/assets/images/harrypotter5.jpg')
+      image:File.open('./app/assets/images/harrypotter5.jpg'),
+      rating:'3.9'
+      
     },
      {
       name:'ハリー・ポッターと謎のプリンス',
       open_house:'2009/07/15',
-      running_time:'154分',
+      running_time:'154',
       junle_id:'11',
       director_id:'8',
       screen_writer:'スティーブ・クローブス',
       summary:'史上最強のファンタジー第6章、クライマックスは、ここから始まる！',
-      image:File.open('./app/assets/images/harrypotter6.jpg')
+      image:File.open('./app/assets/images/harrypotter6.jpg'),
+      rating:'3.8'
     },
     {
       name:'ハリー・ポッター死の秘宝 PART1',
       open_house:'2010/11/19',
-      running_time:'146分',
+      running_time:'146',
       junle_id:'11',
       director_id:'8',
       screen_writer:'スティーブ・クローブス',
       summary:'史上最強のファンタジー　ついに、完結へ。二部構成で贈る最終章、歴史的フィナーレの幕が開く！',
-      image:File.open('./app/assets/images/harrypotter7.jpg')
+      image:File.open('./app/assets/images/harrypotter7.jpg'),
+      rating:'3.1'
     },
     {
       name:'ハリー・ポッターと死の秘宝 PART2',
       open_house:'2011/07/15',
-      running_time:'130分',
+      running_time:'130',
       junle_id:'11',
       director_id:'8',
       screen_writer:'スティーブ・クローブス',
       summary:'映画史上に残る最強シリーズの歴史的フィナーレ。シリーズ最高の感動と興奮を手に入れよう！',
-      image:File.open('./app/assets/images/harrypotter8.jpg')
+      image:File.open('./app/assets/images/harrypotter8.jpg'),
+      rating:'4.0'
     }
   ]
 )

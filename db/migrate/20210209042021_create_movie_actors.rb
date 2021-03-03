@@ -1,8 +1,8 @@
 class CreateMovieActors < ActiveRecord::Migration[5.2]
   def change
     create_table :movie_actors do |t|
-      t.bigint :actor_id
-      t.bigint :movie_id
+      t.references :actor, index:true, foreign_key:true
+      t.references :movie, index:true, foreign_key:true
       t.timestamps
     end
   end

@@ -4,8 +4,7 @@
     <div class = "movie-wrapper">
       <div class = "movie-wrapper-up">
         <div class = "movie-image">
-        <%#= image_tag movie.image.url unless movie.image.nil? %>
-        <%= movie.image %>
+        <%= image_tag movie.image.url, size: '200x280' %>
         </div>
         <div class = "movie-description">
           <h1 class = "movie-name">

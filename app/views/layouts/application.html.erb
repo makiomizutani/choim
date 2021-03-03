@@ -39,25 +39,22 @@
         </div>
         <div class = "header-down">
           <%= link_to image_tag('rogo1.png', class:'rogo-img'), root_path %>
-            <%= form_with url:search_path method: :get do |f| %>
-              <%=f.text_field :name class:"search-form"%>
-            <div class = "menu-down-left">
-              <label><%= f.radio_button :name %>映画検索</label>
-              <input type = "radio" name = 'search' value='cast' class="check" >
-              <label_for = "search-cast">cast検索</label>
-              <input type = "radio" name = 'search' value='user' class ="check" >
-              <label_for = "search-user">user検索</label>
+          <%= form_with(url: search_path, method: :get, local: true) do |f| %>
+            <div class = "search-wrapper">
+              <%= f.text_field :search, class: 'search-form' %>
+              <div class = "menu-down-left">
+                <label><%= f.radio_button :how_search, 'movie' %>映画検索</label>
+                <label><%= f.radio_button :how_search, 'cast' %>CAST検索</label>
+                <label><%= f.radio_button :how_search, 'user' %>USER検索</label>
+              </div>
+              <div class = "menu-down-right">
+                <label><%= f.radio_button :how_search, 'director' %>監督検索</label>
+                <label><%= f.radio_button :how_search, 'raiting' %>評価検索</label>
+                <label><%= f.radio_button :how_search, 'junle' %>ジャンル検索</label>
+              </div>
+              <label><%= f.submit :検索, class: 'search-btn'%></label>
             </div>
-            <div class = 'menu-down-right'>
-              <input type = "radio" name = 'search' value='derector' class="check" >
-              <label_for = "search-derector">監督検索</label>
-              <input type = "radio" name = 'search' value='assessment' class="check" >
-              <label_for = "search-assessment">評価検索</label>
-              <input type = "radio" name = 'search' value= 'junle' class="check" >
-              <label_for = "search-junle">ジャンル検索</label>
-            </div>
-            <button type = 'submit' class='search-btn'>検索</button>
-            <% end %>
+          <% end %>
         </div>
       </div>
     </header>

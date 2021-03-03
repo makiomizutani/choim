@@ -8,12 +8,35 @@ class MoviesController < ApplicationController
   end
   
   def search
-    @movie = Movie.serch(params[:serach])
+    if params[:how_search] == 'movie'
+      @movies = Movie.search[params[:name]]
+      
+    elsif params[:how_search] == 'cast'
+      actor = Actor.find_by('name like ?', "%#{params[:search]}%")
+      #@movies = Movie.select('movie.name').joins(:movie_actors,:actors).where(actors.name =>'ダニエル・ラドクリフ')
+      @movies= actor.movies
+    elsif params[:how_search] == 'user'
+      
+    elsif params[:how_search] == 'director'
+      director = Director.find_by('name like ?', "%#{params[:search]}%")
+      @movies = director.movies
+    elsif params[:how_search] =='raiting'
+      
+    elsif params[:how_search] =='junle'
+      junle = Junle.find_by('name like ?', "%#{params[:search]}%") 
+      @movies= junle.movies
+    end
+    @search_name = params[:search]
   end
   
+  
+ 
+  
+   
+   
 
   
-  
+
   def create
     @movie = Movie.new(movie_params)
     

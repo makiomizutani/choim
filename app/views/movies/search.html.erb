@@ -1,0 +1,13 @@
+<div class = "search-wrapper">
+  <div class = "container">
+    <h1 class = "search-name"><%= @search_name %>に関する映画</h1>
+    <% @movies[0..9].each do |movie| %>
+    <div class = "search-result">
+      <div class = "search-result-index">
+        <%= image_tag movie.image.url,size:'160x192' %>
+        <h1><%= movie.name %></h1>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

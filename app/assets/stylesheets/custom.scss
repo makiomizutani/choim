@@ -56,14 +56,19 @@ ul{
   .rogo-img{
     height:50px;
     width:105px;
-    margin-left:300px;
+    
     background-size:contain;
     
+  }
+  .search-wrapper{
+    width:800px;
+    display:flex;
   }
   .search-form{
     height:28px;
     width:370px;
     margin-left:28px;
+    margin-top:45px;
     border:solid 0.2px;
     
   }
@@ -116,9 +121,9 @@ ul{
     opacity:0.7;
   }
   .movie-index-wrapper{
-  margin-top:40px;
-  width:160px;
-  margin-bottm:10px;
+    margin-top:40px;
+    width:160px;
+    margin-bottm:10px;
   
   
 }
@@ -153,8 +158,6 @@ ul{
   background-color:#F8F8F8;
   margin-top:50px;
   padding-top:30px;
-  
-  
 }
 .form-group{
   margin-bottom:30px;
@@ -164,7 +167,6 @@ ul{
   font-size:20px;
   opacity:0.5;
   margin-left:30px;
-  
 }
 .new-form{
   width:400px;
@@ -219,9 +221,6 @@ ul{
     width:100%;
     display:flex;
   }
-    .movie-image{
-      width:280px;
-    }
   .movie-description{
     margin-left:20px;
     text-align:left;
@@ -234,6 +233,28 @@ ul{
     margin-top:10px;
     margin-bottom:20px;
   }
+  
+  //search
+  .search-wrapper{
+    margin-top:30px;
+    text-align:center;
+  }
+  .search-result{
+    display: flex;
+  }
+  .search-name{
+    text-align:center;
+    font-size:23px;
+  }
+  
+  .search-result-index{
+    width:160px;
+  }
+  .search-result-index h1{
+    font-size:14px;
+  }
+  
+  
     
 
 
