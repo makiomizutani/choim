@@ -11,47 +11,46 @@
     <header>
       <div class = 'header-wrapper'>
         <div class = "header-up">
-          <div class = "container">
             <ul class = "menu-up">
               <% if logged_in? %>
-                <li class = "line-right-logout">
+                <li class = "menu-logout">
                   <%= link_to '映画情報登録', new_movie_path %>
                 </li>
-                <li class = "line-right-logout">
+                <li class = "menu-logout">
                   <%= link_to 'マイページ', '#' %>
                 </li>
-                <li class = "line-right-end-logout">
+                <li class = "menu-end-logout">
                   <%= link_to 'ログアウト', logout_path, method: :delete  %>
                 </li>
               <% else %>
-                <li class = "line-right">
+                <li class = "menu-right">
                   <%= link_to '新規登録', new_user_path %>
                 </li>
-                <li class = "line-right">
+                <li class = "menu-right">
                   <%= link_to 'ログイン', login_path %>
                 </li>
-                <li class = "line-right-end">
+                <li class = "menu-right-end">
                   <%= link_to 'TOP', root_path %>
                 </li>
               <% end %>
             </ul>
-          </div>
+          
         </div>
         <div class = "header-down">
           <%= link_to image_tag('rogo1.png', class:'rogo-img'), root_path %>
           <%= form_with(url: search_path, method: :get, local: true) do |f| %>
             <div class = "search-wrapper">
               <%= f.text_field :search, class: 'search-form' %>
-              <div class = "menu-down-left">
-                <label><%= f.radio_button :how_search, 'movie' %>映画検索</label>
-                <label><%= f.radio_button :how_search, 'cast' %>CAST検索</label>
-                <label><%= f.radio_button :how_search, 'user' %>USER検索</label>
-              </div>
-              <div class = "menu-down-right">
-                <label><%= f.radio_button :how_search, 'director' %>監督検索</label>
-                <label><%= f.radio_button :how_search, 'raiting' %>評価検索</label>
-                <label><%= f.radio_button :how_search, 'junle' %>ジャンル検索</label>
-              </div>
+              <ul class = "menu-down-left">
+                <li><%= f.radio_button :how_search, 'movie' %>映画検索</li>
+                <li><%= f.radio_button :how_search, 'cast' %>CAST検索</li>
+                <li><%= f.radio_button :how_search, 'user' %>USER検索</li>
+              </ul>
+              <ul class = "menu-down-right">
+                <li><%= f.radio_button :how_search, 'director' %>監督検索</li>
+                <li><%= f.radio_button :how_search, 'raiting' %>評価検索</li>
+                <li><%= f.radio_button :how_search, 'junle' %>ジャンル検索</i>
+              </ul>
               <label><%= f.submit :検索, class: 'search-btn'%></label>
             </div>
           <% end %>
