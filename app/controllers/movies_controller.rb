@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   
   def search
     if params[:how_search] == 'movie'
-      @movies = Movie.search[params[:name]]
+      @movies = Movie.where('name like ?', "%#{params[:search]}%")
       
     elsif params[:how_search] == 'cast'
       actor = Actor.find_by('name like ?', "%#{params[:search]}%")
@@ -28,15 +28,6 @@ class MoviesController < ApplicationController
     end
     @search_name = params[:search]
   end
-  
-  
- 
-  
-   
-   
-
-  
-
   def create
     @movie = Movie.new(movie_params)
     

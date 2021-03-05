@@ -18,15 +18,15 @@
           </span>
           <div>
           <span class = "index-junle">
-            ジャンル:<%= movie.junle_id.name %>
+            ジャンル:<%= movie.junle_id%>
           </spam>
           /
           <span class = "index-director">
-            監督:<%= movie.director_id.name %>
+            監督:<%= movie.director_id %>
           </span>
           </div>
-          <h2>あらすじ:</h2>
-          <p class = "movie-summary">
+          <div class = index-summary>あらすじ:</div>
+          <p class = "index-movie-summary">
             <%= movie.summary %>
           </p>
         </div>

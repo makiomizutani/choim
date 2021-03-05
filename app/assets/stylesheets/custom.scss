@@ -1,8 +1,7 @@
 //z
 *{
-  margin:0;
-  padding:0;
-  
+  margin:0px;
+  padding:0px;
 }
 body{
   margin: 0;
@@ -10,7 +9,7 @@ body{
   background-image: url('white_2.jpg');
 }
 ul{
-  list-style:none;
+  list-style:none; 
 }
 //header
 .header-wrapper{
@@ -38,15 +37,16 @@ ul{
     
     .menu-logout{
       border-right:solid white 0.5px;
-      padding-right:50px;
-      margin-left:50px;
+      padding-right:25px;
+      margin-left:25px;
     }
     .menu-right-end{
       margin-left:50px;
       margin-right:50px;
     }
     .menu-end-logout{
-      margin-left:20px;
+      margin-left:30px;
+      margin-right:20px;
     }
     .menu-up a {
       color:white;
@@ -73,7 +73,7 @@ ul{
     align-items:center;
   }
   .search-form{
-    height:28px;
+    height:35px;
     width:550px;
     margin-left:100px;
     vertical-align:middle;
@@ -83,18 +83,25 @@ ul{
   
   .menu-down-left{
     margin-left:95px;
-    margin-top:10px;
+    margin-top:5px;
     font-size:20px;
-    color:#766060;
+    color:#F0E448;
+    opacity:0.7;
     
+  }
+  .menu-down-left li{
+    margin-bottom:5px;
   }
 
   .menu-down-right{
     margin-left:45px;
-    margin-top:10px;
+    margin-top:5px;
     font-size:20px;
-    color:#766060;
-    
+    color:#F0E448;
+    opacity:0.7;
+  }
+  .menu-down-right li{
+    margin-bottom:5px;
   }
   .search-btn{
     margin-left:40px;
@@ -126,7 +133,6 @@ ul{
   
   .topic-movie{
     margin-top:40px;
-    margin-left:10px;
     font-size:30px;
     opacity:0.7;
   }
@@ -204,13 +210,14 @@ ul{
 
 
   
-  //movie-index
+  //index
 .index-wrapper-up{
   text-align:center;
   border:solid 16px #7E7E7E;
   margin-top:50px;
   width:100%;
   display:flex;
+  height:232px;
   }
   .index-description{
     margin-left:14px;
@@ -220,12 +227,19 @@ ul{
     margin-top:5px;
     font-size:16px;
     }
-  .index-description h2{
-    font-size:20px;
-  }
   .index-summary{
-    margin-top:10px;
+    font-size:14px;
+    margin-top:5px;
+  }
+  .index-movie-summary{
+    width:750px;
+    height:80px;
     margin-bottom:20px;
+    overflow: hidden;
+    position:relative;
+    text-overflow: ellipsis;
+    
+
   }
   
   //search
@@ -233,20 +247,39 @@ ul{
     margin-top:30px;
     text-align:center;
   }
-  .search-result{
-    display: flex;
-  }
-  .search-name{
-    text-align:center;
-    font-size:23px;
-  }
+    .search-name{
+      text-align:center;
+      font-size:30px;
+      font-weight:bold;
+      opacity:0.7;
+    }
+    .search-result{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   
-  .search-result-index{
-    width:160px;
-  }
-  .search-result-index h1{
-    font-size:14px;
-  }
+      .search-result-index{
+        width:210px;
+        margin-top:50px;
+      }
+        .search-result-index h1{
+          font-size:20px;
+          margin-top:20px;
+          opacity:0.7;
+          margin-top:0px;
+        }
+    .no-hit{
+      width:100%;
+      height:320px;
+    }
+      .no-hit p{
+        margin-top:100px;
+        font-size:20px;
+        font-weght:bold;
+        opacity:0.7;
+      }
+      
   
   
     
