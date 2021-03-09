@@ -206,6 +206,12 @@ ul{
   font-weight:bold;
   opacity:0.7;
 }
+#movie_junle_id{
+  width:400px;
+}
+#movie_image{
+  width:400px;
+}
 
 
 
@@ -280,7 +286,94 @@ ul{
         opacity:0.7;
       }
       
+ //show
+ .show-movie-wrapper{
+   margin-top:70px;
+   border:solid 2px #7E7E7E;
+   display: flex;
+ }
+ .show-movie-upper-details{
+   margin-left:40px;
+ }
+ .show-movie-upper-details p{
+   font-size:15px;
+   margin-bottom:5px;
+ }
+ .show-movie-upper-details span{
+   font-size:15px;
+   margin-bottom:10px;
+ }
+ 
+ .movie-comment{
+   margin-top:50px;
+   
+ }
+ 
+ .comment-index-wrapper{
+   background-color:#E0E0E0;
+ }
+ 
+ //コメント入力
+ .comment-wrapper{
+   text-align:center;
+ }
+ .review{
+   margin-top:50px;
+   font-size:30px;
+   text-align:center;
+ }
+ .comment-write-wrapper{
+   width: 80%;
+   margin-left:82px;
+   margin-top:50px;
+   border:solid 2px #7E7E7E;
+ }
+   .comment-write-upper{
+     display:flex;
+   }
+   
+   .comment-description{
+     margin-left:10px;
+   }
+     .comment-img{
+       margin-top:12px;
+       margin-left:12px;
+     }
+     .comment-movie {
+       font-size:30px;
+     }
+     .comment-rating{
+       margin-top:50px;
+     }
   
+  .comment{
+    font-size:20px;
+    margin-top:30px;
+    margin-left:12px;
+  }
+  .comment-write{
+    text-align:center;
+    
+  }
+    .new-comment{
+      width:750px;
+      height:200px;
+      margin-bottom:30px;
+    }
+  .comment-btn-w{
+    text-align:center;
+  }
+    .comment-btn{
+      text-align:center;
+      width:400px;
+      height:50px;
+      margin-bottom:20px;
+    }
+    
+ 
+ 
+ 
+ 
   
     
 

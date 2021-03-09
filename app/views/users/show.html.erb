@@ -1,0 +1,21 @@
+<div class = "user-page-wrapper">
+  <div class = "container">
+    <div class = "user-name">
+      <h1><%= @user.name %>がレビューした映画 %><%= @movie.count %>件</h1>
+    </div>
+    <% @movies.each do |movie| %>
+    <div class = "user-movie-wrapper">
+      <div class = 'user-movie'>
+        <div class = 'user-movie-img'>
+        <%= movie.image.url %>
+        </div>
+        <div class = "user-movie-rating">
+        <%= movie.rationg %>
+        </div>
+        <div class = 'user-movie-name'>
+        <%= movie.name %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

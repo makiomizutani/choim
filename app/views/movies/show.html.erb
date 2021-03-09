@@ -1,0 +1,55 @@
+<div class = "show-wrapper">
+  <div class = "container">
+    
+    <div class = "show-movie-wrapper">
+      <div class = "show-movie-upper-img">
+        <%= image_tag @movie.image.url, size: '320x450' %>
+      </div>
+      <div class = "show-movie-upper-details">
+        <h1 class = "detail-name"><%= @movie.name%></h1>
+        <span class = "detail-open-house">上映日: <%= @movie.open_house.strftime('%Y年%m月%d日') %></span>
+        /
+        <span class = 'detail-ranning-time'>上映時間: <%= @movie.running_time %>分</span>
+        <br>
+        <span class = "detail-junle">ジャンル: <%= @junle.name %></span>
+        /
+        <span class = 'detail-director'>監督: <%= @director.name %></span>
+        /
+        <span class = 'detail-screen-writer'>脚本家: <%= @movie.screen_writer%></span>
+        <p class = "">キャスト: </p>
+        <% @casts.each do |cast| %>
+            <span class = 'detail-cast'><%= cast.name %>,  </span>
+        <% end %>
+        <p class = 'detail-rate'><%= @movie.rating%></p>
+        <p>あらすじ:</p>
+        <p class = 'detail-summary'><%= @movie.summary %></p>
+        <div class = movie-show-link>
+          <%= link_to 'この映画をレビューする', new_comment_path(id: @movie.id), method: :get %>
+        </div>
+      </div>
+    </div>
+    
+    <h1 class = "movie-comment">この映画に関するコメント</h1>
+    <% @comments.each do |comment| %>
+      <div class = commnet-index-wrapper>
+        <div class = "comment-upper">
+          <div class = "commenet-upper-left">
+            <div class = "commnet-name">
+              
+            </div>
+            <div class = "comment-update">
+              
+            </div>
+          </div>
+          <div class = "comment-upper-rate">
+          </div>
+        </div>
+        <div class = "commnet">
+          <p><%= commnet.comment %></p>
+        </div>
+        <div class = "iine">
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

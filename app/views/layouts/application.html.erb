@@ -20,7 +20,7 @@
                   <%= link_to 'マイページ', '#' %>
                 </li>
                 <li class = "menu-end-logout">
-                  <%= link_to 'ログアウト', logout_path, method: :delete  %>
+                  <%= link_to 'ログアウト', logout_path, method: :delete,data: {confirm: '本当にログアウトしますか？'} %>
                 </li>
               <% else %>
                 <li class = "menu-right">

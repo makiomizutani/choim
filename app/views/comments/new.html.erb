@@ -1,0 +1,27 @@
+<div class = "comment-wrapper">
+  <div class = "container">
+    <h1 class= "review">Review</h1>
+    <%= form_with model: @comment, method: :post,local: true do |f| %>
+      <div class = "comment-write-wrapper">
+        <div class = "comment-write-upper">
+          <div class = "comment-img">
+            <%= image_tag @movie.image.url,size:'330x270' %>
+          </div>
+          <div class = comment-description>
+            <h1 class = "comment-movie"><%= @movie.name %></h1>
+            <p class = "comment-rating"><%= @movie.rating %></p>
+          </div>
+        </div>
+        <p class = 'comment'>comment</p>
+        <div class = 'comment-write'>
+          <%= f.text_area :comment, class: 'new-comment' %>
+          <%= f.hidden_field :movie_id, value:@movie.id %>
+        </div>
+        <div class= "comment-btn-w">
+          <%= f.submit '保存', class: 'comment-btn' %>
+        </div>
+      </div>
+      
+      <% end %>
+  </div>
+</div>

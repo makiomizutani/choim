@@ -28,6 +28,7 @@ class MoviesController < ApplicationController
     end
     @search_name = params[:search]
   end
+  
   def create
     @movie = Movie.new(movie_params)
     
@@ -36,6 +37,13 @@ class MoviesController < ApplicationController
     else
       render :new
     end
+  end
+  
+  def show 
+    @movie = Movie.find_by(id: params[:id])
+    @director=Movie.select("directors.name").joins(:movie_directors,:directors).find_by(id: params[:id])
+    @junle = @movie.junles.first
+    @casts = @movie.actors
   end
   
   

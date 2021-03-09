@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_061415) do
+ActiveRecord::Schema.define(version: 2021_03_08_142202) do
 
   create_table "actors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_061415) do
     t.bigint "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "comment"
   end
 
   create_table "directors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -49,6 +50,8 @@ ActiveRecord::Schema.define(version: 2021_03_01_061415) do
     t.bigint "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["actor_id"], name: "index_movie_actors_on_actor_id"
+    t.index ["movie_id"], name: "index_movie_actors_on_movie_id"
   end
 
   create_table "movie_directors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -56,6 +59,8 @@ ActiveRecord::Schema.define(version: 2021_03_01_061415) do
     t.bigint "director_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["director_id"], name: "index_movie_directors_on_director_id"
+    t.index ["movie_id"], name: "index_movie_directors_on_movie_id"
   end
 
   create_table "movie_junles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -63,6 +68,8 @@ ActiveRecord::Schema.define(version: 2021_03_01_061415) do
     t.bigint "junle_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["junle_id"], name: "index_movie_junles_on_junle_id"
+    t.index ["movie_id"], name: "index_movie_junles_on_movie_id"
   end
 
   create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -87,4 +94,10 @@ ActiveRecord::Schema.define(version: 2021_03_01_061415) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "movie_actors", "actors"
+  add_foreign_key "movie_actors", "movies"
+  add_foreign_key "movie_directors", "directors"
+  add_foreign_key "movie_directors", "movies"
+  add_foreign_key "movie_junles", "junles"
+  add_foreign_key "movie_junles", "movies"
 end

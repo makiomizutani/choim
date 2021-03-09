@@ -1,36 +1,38 @@
 <div class = "index-wrapper">
   <div class = 'container'>
     <% @movies.each do |movie| %>
-      <div class = "index-wrapper-up">
-        <div class = "index-image">
-        <%= image_tag movie.image.url, size: '150x200' %>
-        </div>
-        <div class = "index-description">
-          <h1 class = "index-name">
-            <%= movie.name %>
-          </h1>
-          <span class= "index-open-house">
-            上映日:<%= movie.open_house.strftime('%Y年%m月%d日') %>
-          </span>
-          /
-          <span class = "index-time">
-            上映時間:<%= movie.running_time %>分
-          </span>
-          <div>
-          <span class = "index-junle">
-            ジャンル:<%= movie.junle_id%>
-          </spam>
-          /
-          <span class = "index-director">
-            監督:<%= movie.director_id %>
-          </span>
+      <%= link_to movie_path(id: movie.id) do %>
+        <div class = "index-wrapper-up">
+          <div class = "index-image">
+          <%= image_tag movie.image.url, size: '150x200' %>
           </div>
-          <div class = index-summary>あらすじ:</div>
-          <p class = "index-movie-summary">
-            <%= movie.summary %>
-          </p>
+          <div class = "index-description">
+            <h1 class = "index-name">
+              <%= movie.name %>
+            </h1>
+            <span class= "index-open-house">
+              上映日:<%= movie.open_house.strftime('%Y年%m月%d日') %>
+            </span>
+            /
+            <span class = "index-time">
+              上映時間:<%= movie.running_time %>分
+            </span>
+            <div>
+            <span class = "index-junle">
+              ジャンル:<%= movie.junle_id%>
+            </spam>
+            /
+            <span class = "index-director">
+              監督:<%= movie.director_id %>
+            </span>
+            </div>
+            <div class = index-summary>あらすじ:</div>
+            <p class = "index-movie-summary">
+              <%= movie.summary %>
+            </p>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
     <h1 class = "next-page">次のページへ</h1>
   </div>
