@@ -2,373 +2,445 @@
 *{
   margin:0px;
   padding:0px;
-}
-body{
-  margin: 0;
-  font-family:"Hiragino Kaku Gothic ProN";
-  background-image: url('white_2.jpg');
-}
-ul{
-  list-style:none; 
-}
-//header
-.header-wrapper{
-  height:150px;
-  width:100vw;
-}
-  .header-up{
-    height:40px;
-    width:100%;
-    background-color:#050505;
-  }
-    .menu-up{
-      padding-top:5px;
-      display:flex;
-      hjeight:100%;
-      justify-content:flex-end;
-      vertical-align:middle;
-      font-size:20px;
-    }
-    .menu-right{
-      border-right:solid white 0.5px;
-      padding-right:40px;
-      margin-left:40px;
-    }
-    
-    .menu-logout{
-      border-right:solid white 0.5px;
-      padding-right:25px;
-      margin-left:25px;
-    }
-    .menu-right-end{
-      margin-left:50px;
-      margin-right:50px;
-    }
-    .menu-end-logout{
-      margin-left:30px;
-      margin-right:20px;
-    }
-    .menu-up a {
-      color:white;
-      opacity:0.9;
-    }
-    
-  .header-down{
-    height:110px;
-    width:100%;
-    background-image: url('black_1.jpg');
-    display:flex;
-  }
- 
-  .rogo-img{
-    height:90px;
-    width:200px;
-    background-size:contain;
-    margin-top:10px;
-    margin-left:60px;
-  }
-  .search-wrapper{
-    width:100%;
-    display:flex;
-    align-items:center;
-  }
-  .search-form{
-    height:35px;
-    width:550px;
-    margin-left:100px;
-    vertical-align:middle;
-    border:solid 0.2px;
-    
-  }
   
-  .menu-down-left{
-    margin-left:95px;
-    margin-top:5px;
-    font-size:20px;
-    color:#F0E448;
-    opacity:0.7;
-    
-  }
-  .menu-down-left li{
-    margin-bottom:5px;
-  }
-
-  .menu-down-right{
-    margin-left:45px;
-    margin-top:5px;
-    font-size:20px;
-    color:#F0E448;
-    opacity:0.7;
-  }
-  .menu-down-right li{
-    margin-bottom:5px;
-  }
-  .search-btn{
-    margin-left:40px;
-    width:90px;
-    height:28px;
-    background:#FFFFFF;
-    border:solid 0.5px;
-  }
-//footer
-.footer{
-  height:140px;
-  width:100vw;
-  margin-top:50px;
-  background-color:#050505;
 }
-.container{
-    width:70%;
-  }
-//topページ
-.top-wrapper{
-  width:100%;
-}
-  .main{
-    background-image: url('movie_01.jpg');
-    height:490px;
-    width:100%;
-  }
-
   
-  .topic-movie{
-    margin-top:40px;
-    font-size:30px;
-    opacity:0.7;
+  body{
+    margin: 0;
+    font-family:"Hiragino Kaku Gothic ProN";
+    background-image: url('white_2.jpg');
   }
-  
-  .top-index-wrapper{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-    .movie-index-wrapper{
-      margin-top:40px;
-      width:210px;
-      margin-bottm:10px;
+  ul{
+    list-style:none; 
   }
+  .pagination>li>a{
+    border:none;
+    margin-top:50px;
+    color:#7E7E7E;
+  }
+    .pagination>.active>a{
+      background:#7E7E7E;
+      border-radius:10px;
+    }
   
-      .movie-index-name{
+  //header
+  .header-wrapper{
+    height:150px;
+    width:100vw;
+  }
+    .header-up{
+      height:40px;
+      width:100%;
+      background-color:#050505;
+    }
+      .menu-up{
+        padding-top:5px;
+        display:flex;
+        hjeight:100%;
+        justify-content:flex-end;
+        vertical-align:middle;
         font-size:20px;
-        text-align:center;
-        margin-top:30px;
       }
-  
-.movie-index-link{
-  text-align:right;
-}
-  .movie-index-link a{
-    font-size:20px;
-    color:#170505;
-    opacity:0.5;
-  }
-
-//登録form
-.entry-name{
-  text-align:center;
-  font-size:24px;
-  margin-top:50px;
-  opacity:0.7;
-}
-.new-member-entry-form{
-  background-color:#F8F8F8;
-  margin-top:50px;
-  padding-top:30px;
-}
-.form-group{
-  margin-bottom:30px;
-}
-.new-label{
-  display:block;
-  font-size:20px;
-  opacity:0.5;
-  margin-left:30px;
-}
-.new-form{
-  width:400px;
-  height:30px;
-  margin-top:5px;
- //text-align:center;効かない？
-}
- .new-area{
-   width:400px;
-  height:200px;
-  margin-top:5px;
-}
-.btn-block{
-  width:40%;
-  height:70px;
-  margin-top:100px;
-  border-style: solid;
-  //f.submitのwidt100%hは解除できない？
-  margin-bottom:30px;
-  font-size:20px;
-  font-weight:bold;
-  opacity:0.7;
-}
-#movie_junle_id{
-  width:400px;
-}
-#movie_image{
-  width:400px;
-}
-
-
-
-  
-  //index
-.index-wrapper-up{
-  text-align:center;
-  border:solid 16px #7E7E7E;
-  margin-top:50px;
-  width:100%;
-  display:flex;
-  height:232px;
-  }
-  .index-description{
-    margin-left:14px;
-    text-align:left;
-  }
-  .index-name{
-    margin-top:5px;
-    font-size:16px;
+      .menu-right{
+        border-right:solid white 0.5px;
+        padding-right:40px;
+        margin-left:40px;
+      }
+      
+      .menu-logout{
+        border-right:solid white 0.5px;
+        padding-right:25px;
+        margin-left:25px;
+      }
+      .menu-right-end{
+        margin-left:50px;
+        margin-right:50px;
+      }
+      .menu-end-logout{
+        margin-left:30px;
+        margin-right:20px;
+      }
+      .menu-up a {
+        color:white;
+        opacity:0.9;
+      }
+      
+    .header-down{
+      height:110px;
+      width:100%;
+      background-image: url('black_1.jpg');
+      display:flex;
     }
-  .index-summary{
-    font-size:14px;
-    margin-top:5px;
-  }
-  .index-movie-summary{
-    width:750px;
-    height:80px;
-    margin-bottom:20px;
-    overflow: hidden;
-    position:relative;
-    text-overflow: ellipsis;
+   
+    .rogo-img{
+      height:80px;
+      width:80px;
+      background-size:contain;
+      margin-top:15px;
+      margin-left:60px;
+    }
+    .search-wrapper{
+      width:100%;
+      display:flex;
+      align-items:center;
+    }
+    .search-form{
+      height:35px;
+      width:550px;
+      margin-left:100px;
+      vertical-align:middle;
+      border:solid 0.2px;
+      
+    }
     
-
-  }
+    .menu-down-left{
+      margin-left:95px;
+      margin-top:5px;
+      font-size:20px;
+      color:#F0E448;
+      opacity:0.7;
+      
+    }
+    .menu-down-left li{
+      margin-bottom:5px;
+    }
   
-  //search
-  .search-result-wrapper{
-    margin-top:30px;
-    text-align:center;
-  }
-    .search-name{
-      text-align:center;
-      font-size:30px;
-      font-weight:bold;
+    .menu-down-right{
+      margin-left:45px;
+      margin-top:5px;
+      font-size:20px;
+      color:#F0E448;
       opacity:0.7;
     }
-    .search-result{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    .menu-down-right li{
+      margin-bottom:5px;
     }
-  
-      .search-result-index{
-        width:210px;
-        margin-top:50px;
-      }
-        .search-result-index h1{
-          font-size:20px;
-          margin-top:20px;
-          opacity:0.7;
-          margin-top:0px;
-        }
-    .no-hit{
+    .search-btn{
+      margin-left:40px;
+      width:90px;
+      height:28px;
+      background:#FFFFFF;
+      border:solid 0.5px;
+    }
+  //footer
+  .footer{
+    height:140px;
+    width:100vw;
+    margin-top:50px;
+    background-color:#050505;
+  }
+  .container{
+      width:70%;
+    }
+    //topページ
+    .top-wrapper{
       width:100%;
-      height:320px;
     }
-      .no-hit p{
-        margin-top:100px;
-        font-size:20px;
-        font-weght:bold;
+      .main{
+        img{
+          width:100%;
+          height:490px;
+        }
+        height:490px;
+        width:100%;
+      }
+    
+      
+      .topic-movie{
+        margin-top:40px;
+        font-size:30px;
         opacity:0.7;
       }
       
- //show
- .show-movie-wrapper{
-   margin-top:70px;
-   border:solid 2px #7E7E7E;
-   display: flex;
- }
- .show-movie-upper-details{
-   margin-left:40px;
- }
- .show-movie-upper-details p{
-   font-size:15px;
-   margin-bottom:5px;
- }
- .show-movie-upper-details span{
-   font-size:15px;
-   margin-bottom:10px;
- }
- 
- .movie-comment{
-   margin-top:50px;
-   
- }
- 
- .comment-index-wrapper{
-   background-color:#E0E0E0;
- }
- 
- //コメント入力
- .comment-wrapper{
-   text-align:center;
- }
- .review{
-   margin-top:50px;
-   font-size:30px;
-   text-align:center;
- }
- .comment-write-wrapper{
-   width: 80%;
-   margin-left:82px;
-   margin-top:50px;
-   border:solid 2px #7E7E7E;
- }
-   .comment-write-upper{
-     display:flex;
-   }
-   
-   .comment-description{
-     margin-left:10px;
-   }
-     .comment-img{
-       margin-top:12px;
-       margin-left:12px;
-     }
-     .comment-movie {
-       font-size:30px;
-     }
-     .comment-rating{
-       margin-top:50px;
-     }
-  
-  .comment{
-    font-size:20px;
-    margin-top:30px;
-    margin-left:12px;
-  }
-  .comment-write{
-    text-align:center;
+      .top-index-wrapper{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+        .movie-index-wrapper{
+          margin-top:40px;
+          width:210px;
+          margin-bottm:10px;
+        }
+      
+          .movie-index img{
+            border-radius: 20px;
+          }
+          .movie-index-name{
+            font-size:20px;
+            text-align:center;
+            margin-top:30px;
+          }
+      
+    .movie-index-link{
+      text-align:right;
+    }
+      .movie-index-link a{
+        font-size:20px;
+        color:#170505;
+        opacity:0.5;
+      }
     
-  }
-    .new-comment{
-      width:750px;
-      height:200px;
+    //登録form
+    .entry-name{
+      text-align:center;
+      font-size:24px;
+      margin-top:50px;
+      opacity:0.7;
+    }
+    .new-member-entry-form{
+      
+      margin-top:50px;
+      padding-top:30px;
+      border-radius:20px;
+    }
+    .form-group{
       margin-bottom:30px;
     }
-  .comment-btn-w{
-    text-align:center;
-  }
-    .comment-btn{
-      text-align:center;
-      width:400px;
-      height:50px;
-      margin-bottom:20px;
+    .new-label{
+      display:block;
+      font-size:20px;
+      opacity:0.5;
+      margin-left:30px;
     }
+    .new-form{
+      width:474px;
+      height:30px;
+      margin-top:5px;
+     //text-align:center;効かない？
+    }
+     .new-area{
+       width:474px;
+      height:200px;
+      margin-top:5px;
+    }
+    .btn-block{
+      width:40%;
+      height:70px;
+      margin-top:100px;
+      border-style: solid;
+      //f.submitのwidt100%hは解除できない？
+      margin-bottom:30px;
+      font-size:20px;
+      font-weight:bold;
+      opacity:0.7;
+    }
+    #movie_junle_id{
+      width:400px;
+    }
+    #movie_image{
+      width:400px;
+    }
+    
+    
+    
+      
+      //index
+    .index-wrapper-up{
+      text-align:center;
+      border-radius:20px;
+      margin-top:50px;
+      width:100%;
+      display:flex;
+      height:214px;
+      }
+      .index-image img{
+        margin:5px;
+        border-radius:20px;
+      }
+      .index-description{
+        margin-left:14px;
+        text-align:left;
+      }
+      .index-name{
+        margin-top:5px;
+        font-size:16px;
+        }
+      .index-summary{
+        font-size:14px;
+        margin-top:5px;
+      }
+      .index-movie-summary{
+        width:750px;
+        height:80px;
+        margin-bottom:20px;
+        overflow: hidden;
+        position:relative;
+        text-overflow: ellipsis;
+        
+    
+      }
+      
+      //search
+      .search-result-wrapper{
+        margin-top:30px;
+        text-align:center;
+      }
+        .search-name{
+          text-align:center;
+          font-size:30px;
+          font-weight:bold;
+          opacity:0.7;
+        }
+        .search-result{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+      
+          .search-result-index{
+            width:210px;
+            margin-top:50px;
+          }
+            .search-result-index img{
+              border-radius:15px;
+              
+            }
+            
+            .search-result-index h1{
+              font-size:20px;
+              margin-top:20px;
+              opacity:0.7;
+            }
+        .no-hit{
+          width:100%;
+          height:320px;
+        }
+          .no-hit p{
+            margin-top:100px;
+            font-size:20px;
+            font-weght:bold;
+            opacity:0.7;
+          }
+          
+     //show
+     .show-movie-wrapper{
+       margin-top:70px;
+       display: flex;
+       border-radius:20px;
+     }
+       .show-movie-upper-img img{
+         border-radius:15px;
+         margin:5px;
+       }
+       .show-movie-upper-details{
+         margin:30px;
+         margin-top:0px;
+       }
+       .show-movie-upper-details p{
+         font-size:15px;
+         margin-bottom:5px;
+       }
+       .show-movie-upper-details span{
+         font-size:15px;
+         margin-bottom:10px;
+       }
+       .detail-junle{
+         background-color:#555555;
+         color:white;
+       }
+       .detail-director{
+         background-color:#555555;
+         color:white;
+       }
+       .detail-cast{
+         background-color:#555555;
+         color:white;
+         margin-right:10px;
+       }
+     
+     .movie-comment{
+       margin:50px 0px;
+       
+     }
+       .comment-index-wrapper{
+         margin-bottom:50px;
+         border-bottom:solid 1px #555555;
+       }
+         .comment-upper{
+           display:flex;
+           margin-left:14px;
+         }
+       .comment-upper-rate{
+         margin-left:30px;
+       }
+       .comment-text{
+         border-radius:20px;
+         margin-left:14px;
+         margin-top:10px;
+         margin-bottom:20px;
+         width:95%;
+         background-color:#FFFFFF;
+       }
+       .comment-text p{
+         margin-left:10px;
+       }
+     
+     
+     
+     
+     //コメント入力
+     .comment-wrapper{
+       text-align:center;
+     }
+     .review{
+       margin-top:50px;
+       font-size:30px;
+       text-align:center;
+     }
+     .comment-write-wrapper{
+       width: 80%;
+       margin-left:82px;
+       margin-top:50px;
+       border:solid 2px #7E7E7E;
+       border-radius:20px;
+     }
+       .comment-write-upper{
+         display:flex;
+       }
+       
+       .comment-description{
+         margin-left:10px;
+       }
+         .comment-img{
+           margin-top:12px;
+           margin-left:12px;
+         }
+           .comment-img img{
+             border-radius:20px;
+           }
+         .comment-movie {
+           font-size:30px;
+         }
+         .star img{
+           width:80px;
+           height:80px;
+          
+         }
+      
+      .comment-input{
+        font-size:20px;
+        margin-top:30px;
+        margin-left:12px;
+      }
+      .comment-write{
+        text-align:center;
+        
+      }
+        .new-comment{
+          width:750px;
+          height:200px;
+          margin-bottom:30px;
+        }
+      .comment-btn-w{
+        text-align:center;
+      }
+        .comment-btn{
+          text-align:center;
+          width:400px;
+          height:50px;
+          margin-bottom:20px;
+        }
     
  
  

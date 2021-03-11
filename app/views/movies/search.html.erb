@@ -4,12 +4,16 @@
       <h1 class = "search-name">'<%= @search_name %>' に関する映画 <%= @movies.count %>件</h1>
       <div class = "search-result">
         <% @movies[0..11].each do |movie| %>
-          <div class = "search-result-index">
-            <%= image_tag movie.image.url,size:'210x300' %>
-            <h1><%= movie.name %></h1>
-          </div>
+          <%= link_to movie_path(id: movie.id) do %>
+            <div class = "search-result-index">
+              <%= image_tag movie.image.url,size:'210x300' %>
+              <h1><%= movie.name %></h1>
+            </div>
+          <% end %>
         <% end %>
+        <%= paginate @movies %>
       </div>
+      
     <% else %>
       <div class = "no-hit">
         <p>ヒットしませんでした</p>

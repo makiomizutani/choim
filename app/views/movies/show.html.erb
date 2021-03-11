@@ -3,7 +3,7 @@
     
     <div class = "show-movie-wrapper">
       <div class = "show-movie-upper-img">
-        <%= image_tag @movie.image.url, size: '320x450' %>
+        <%= image_tag @movie.image.url, size: '350x480' %>
       </div>
       <div class = "show-movie-upper-details">
         <h1 class = "detail-name"><%= @movie.name%></h1>
@@ -18,7 +18,9 @@
         <span class = 'detail-screen-writer'>脚本家: <%= @movie.screen_writer%></span>
         <p class = "">キャスト: </p>
         <% @casts.each do |cast| %>
-            <span class = 'detail-cast'><%= cast.name %>,  </span>
+          <%= link_to search_path(id: cast.id) do %>
+            <span class = 'detail-cast'><%= cast.name %></span>,
+          <% end %>
         <% end %>
         <p class = 'detail-rate'><%= @movie.rating%></p>
         <p>あらすじ:</p>
@@ -31,25 +33,38 @@
     
     <h1 class = "movie-comment">この映画に関するコメント</h1>
     <% @comments.each do |comment| %>
-      <div class = commnet-index-wrapper>
+      <div class = comment-index-wrapper>
         <div class = "comment-upper">
           <div class = "commenet-upper-left">
             <div class = "commnet-name">
-              
+              <h3><%= comment.user.name %>さんのコメント</h3>
             </div>
             <div class = "comment-update">
-              
+              <%= comment.updated_at.strftime('%Y年%m月%d日%H時%M分') %>
             </div>
           </div>
-          <div class = "comment-upper-rate">
+          <div class = "star-rate ">
+            <%= @movie.rating %>
+            <--!li id=#{food.id}" 口コミ#{food.reviews.count}件 &nbsp;
           </div>
+          <script>
+            $('#star-rate-#{food.id}').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn:'<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              half: true,
+              readOnly: true,
+              
+          </script>
         </div>
-        <div class = "commnet">
-          <p><%= commnet.comment %></p>
+        <div class = "comment-text">
+          <p><%= comment.comment %></p>
         </div>
         <div class = "iine">
         </div>
       </div>
     <% end %>
+    <%= paginate @comments %>
   </div>
 </div>

@@ -10,5 +10,8 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :favorites
-  has_many :comments
+  
+  has_many :comments, dependent: :destroy
+  has_many :movies, through: :comments
+  accepts_nested_attributes_for :comments, allow_destroy: true
 end

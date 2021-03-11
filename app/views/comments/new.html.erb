@@ -9,10 +9,20 @@
           </div>
           <div class = comment-description>
             <h1 class = "comment-movie"><%= @movie.name %></h1>
-            <p class = "comment-rating"><%= @movie.rating %></p>
+            <div id = "star"><%= f.hidden_field :rate, id: :review_star %></div>
           </div>
+          <script>
+            $('#star').raty({
+              size: 80,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn:   '<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              scoreName: 'review[rate]',
+              half: true,
+            });
+          </script>
         </div>
-        <p class = 'comment'>comment</p>
+        <p class = 'comment-input'>comment</p>
         <div class = 'comment-write'>
           <%= f.text_area :comment, class: 'new-comment' %>
           <%= f.hidden_field :movie_id, value:@movie.id %>
