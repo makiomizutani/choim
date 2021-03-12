@@ -1,7 +1,7 @@
 <div class = "comment-wrapper">
   <div class = "container">
     <h1 class= "review">Review</h1>
-    <%= form_with model: @comment, method: :post,local: true do |f| %>
+    <%= form_with model: @comment, local: true do |f| %>
       <div class = "comment-write-wrapper">
         <div class = "comment-write-upper">
           <div class = "comment-img">
@@ -9,16 +9,19 @@
           </div>
           <div class = comment-description>
             <h1 class = "comment-movie"><%= @movie.name %></h1>
-            <div id = "star"><%= f.hidden_field :rate, id: :review_star %></div>
+            <p id = "star"><%= f.hidden_field :rate, id: :review_star %></p>
+            <span id = 'hint1'></span>
           </div>
           <script>
             $('#star').raty({
-              size: 80,
+              size: 20,
               starOff:  '<%= asset_path('star-off.png') %>',
               starOn:   '<%= asset_path('star-on.png') %>',
               starHalf: '<%= asset_path('star-half.png') %>',
               scoreName: 'review[rate]',
               half: true,
+              target: '#hint1',
+              targetType: 'number'
             });
           </script>
         </div>
@@ -28,7 +31,9 @@
           <%= f.hidden_field :movie_id, value:@movie.id %>
         </div>
         <div class= "comment-btn-w">
-          <%= f.submit '保存', class: 'comment-btn' %>
+          
+            <%= f.submit '保存', class: 'comment-btn' %>
+          
         </div>
       </div>
       

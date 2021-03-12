@@ -375,6 +375,11 @@
        .comment-text p{
          margin-left:10px;
        }
+       .destroy-btn{
+         display:block;
+         text-align:right;
+         
+       }
      
      
      
@@ -392,7 +397,6 @@
        width: 80%;
        margin-left:82px;
        margin-top:50px;
-       border:solid 2px #7E7E7E;
        border-radius:20px;
      }
        .comment-write-upper{
@@ -400,7 +404,7 @@
        }
        
        .comment-description{
-         margin-left:10px;
+         margin:0 10px;
        }
          .comment-img{
            margin-top:12px;
@@ -412,11 +416,8 @@
          .comment-movie {
            font-size:30px;
          }
-         .star img{
-           width:80px;
-           height:80px;
-          
-         }
+      
+         
       
       .comment-input{
         font-size:20px;
