@@ -2,12 +2,26 @@
 *{
   margin:0px;
   padding:0px;
+  font-family: 'Trebuchet';
+}
+h1,h2,h3,h4,h5{
+  margin:0px;
+}
+a{
+  color:#000000;
   
 }
+.star-raty{
+  img {
+    width:50px;
+  }
+}
+
+
+
   
   body{
-    margin: 0;
-    font-family:"Hiragino Kaku Gothic ProN";
+  font-family:"Hiragino Kaku Gothic ProN";
     background-image: url('white_2.jpg');
   }
   ul{
@@ -77,8 +91,9 @@
       width:80px;
       background-size:contain;
       margin-top:15px;
-      margin-left:60px;
+      margin-left:130px;
     }
+    
     .search-wrapper{
       width:100%;
       display:flex;
@@ -87,14 +102,14 @@
     .search-form{
       height:35px;
       width:550px;
-      margin-left:100px;
+      margin-left:130px;
       vertical-align:middle;
       border:solid 0.2px;
       
     }
     
     .menu-down-left{
-      margin-left:95px;
+      margin-left:120px;
       margin-top:5px;
       font-size:20px;
       color:#F0E448;
@@ -149,7 +164,7 @@
       .topic-movie{
         margin-top:40px;
         font-size:30px;
-        opacity:0.7;
+        
       }
       
       .top-index-wrapper{
@@ -335,6 +350,7 @@
          font-size:15px;
          margin-bottom:10px;
        }
+       
        .detail-junle{
          background-color:#555555;
          color:white;
@@ -361,7 +377,15 @@
            display:flex;
            margin-left:14px;
          }
-       .comment-upper-rate{
+       .comment-upper-left{
+         margin-left:30px;
+       }
+       
+       #star-rate-{
+         margin-left:30px;
+       }
+       .star-rate-score{
+         font-size:20px;
          margin-left:30px;
        }
        .comment-text{
@@ -376,8 +400,8 @@
          margin-left:10px;
        }
        .destroy-btn{
-         display:block;
-         text-align:right;
+         
+         margin-left:300px;
          
        }
      
@@ -416,6 +440,7 @@
          .comment-movie {
            font-size:30px;
          }
+         
       
          
       
@@ -442,6 +467,40 @@
           height:50px;
           margin-bottom:20px;
         }
+        
+        
+        
+        
+    //マイページ
+    .user-name{
+      text-align:center;
+      margin:50px 0;
+      font-size:30px;
+    }
+    .user-movie-wrapper{
+      width:100%;
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      
+      
+    }
+    
+    .user-movie{
+        width:210px;
+      img {
+        width:210px;
+        height:300px;
+        border-radius:20px;
+      }
+    }
+      .user-movie-name{
+        font-size: 20px;
+        text-align: center;
+        margin-top: 30px;
+      }
+    
+    
     
  
  

@@ -1,21 +1,23 @@
-<div class = "user-page-wrapper">
-  <div class = "container">
-    <div class = "user-name">
-      <h1><%= @user.name %>がレビューした映画 %><%= @movie.count %>件</h1>
+<div class="user-page-wrapper">
+  <div class="container">
+    <div class="user-name">
+      <h1>' <%= @user.name %> 'さんがレビューした映画<%= @movies.count %>件</h1>
     </div>
-    <% @movies.each do |movie| %>
-    <div class = "user-movie-wrapper">
-      <div class = 'user-movie'>
-        <div class = 'user-movie-img'>
-        <%= movie.image.url %>
+    
+    <div class="user-movie-wrapper">
+      <% @movies.each do |movie| %>
+        <div class='user-movie'>
+          <%= link_to movie_path(id: movie.id) do %>
+            <%= image_tag movie.image.url %>
+          <% end %>
+          <div class="user-movie-rating">
+          
+          </div>
+          <div class='user-movie-name'>
+          <%= movie.name %>
+          </div>
         </div>
-        <div class = "user-movie-rating">
-        <%= movie.rationg %>
-        </div>
-        <div class = 'user-movie-name'>
-        <%= movie.name %>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

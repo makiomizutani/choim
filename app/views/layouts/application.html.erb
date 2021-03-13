@@ -4,6 +4,7 @@
     <title>Choim</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,7 +18,7 @@
                   <%= link_to '映画情報登録', new_movie_path %>
                 </li>
                 <li class = "menu-logout">
-                  <%= link_to 'マイページ', '#' %>
+                  <%= link_to 'マイページ', user_path(id: current_user.id) %>
                 </li>
                 <li class = "menu-end-logout">
                   <%= link_to 'ログアウト', logout_path, method: :delete,data: {confirm: '本当にログアウトしますか？'} %>

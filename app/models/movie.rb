@@ -18,6 +18,7 @@ class Movie < ApplicationRecord
   accepts_nested_attributes_for :movie_actors, allow_destroy: true
   
   
+  
   def self.search
     if search
       Movie.where('name LIKE(?)','%#search%')

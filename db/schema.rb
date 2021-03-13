@@ -21,10 +21,12 @@ ActiveRecord::Schema.define(version: 2021_03_11_095350) do
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "movie_id"
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "comment"
     t.float "rate"
+    t.index ["movie_id"], name: "index_comments_on_movie_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "directors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -38,6 +40,8 @@ ActiveRecord::Schema.define(version: 2021_03_11_095350) do
     t.bigint "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_favorites_on_comment_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "junles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,6 +99,8 @@ ActiveRecord::Schema.define(version: 2021_03_11_095350) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "favorites", "comments"
+  add_foreign_key "favorites", "users"
   add_foreign_key "movie_actors", "actors"
   add_foreign_key "movie_actors", "movies"
   add_foreign_key "movie_directors", "directors"

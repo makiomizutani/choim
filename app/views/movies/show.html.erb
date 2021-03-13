@@ -43,19 +43,18 @@
               <%= comment.updated_at.strftime('%Y年%m月%d日%H時%M分') %>
             </div>
           </div>
-          <div class = "star-rate ">
-            <%= @movie.rating %>
-            !li id=#{food.id}" 口コミ#{food.reviews.count}件 &nbsp;
-          </div>
+          <div class="star-raty" id="star-rate-<%= comment.id %>"></div>
+          <div class="star-rate-score"><%= comment.rate %></div>
           <script>
-            $('#star-rate-#{food.id}').raty({
+            $('#star-rate-<%= comment.id %>').raty({
               size: 36,
               starOff:  '<%= asset_path('star-off.png') %>',
               starOn:'<%= asset_path('star-on.png') %>',
               starHalf: '<%= asset_path('star-half.png') %>',
               half: true,
               readOnly: true,
-              
+              score: <%= comment.rate %>
+            });
           </script>
         </div>
         <div class = "comment-text">
@@ -63,7 +62,7 @@
         </div>
         <div class = "iine">
         </div>
-        <% if comment.user_id == current_user.id %>
+        <% if comment.user == current_user.id %>
           <%= link_to '削除する', comment_path(id: comment.id), method: :delete, class: 'destory-btn' %>
         <% end %>
       </div>

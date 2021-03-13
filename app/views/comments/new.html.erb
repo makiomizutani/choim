@@ -9,21 +9,13 @@
           </div>
           <div class = comment-description>
             <h1 class = "comment-movie"><%= @movie.name %></h1>
-            <p id = "star"><%= f.hidden_field :rate, id: :review_star %></p>
+            <div  class="star-raty" id="star">
+              <%= f.hidden_field :rate, id: :review_star %>
+              
+            </div>
             <span id = 'hint1'></span>
           </div>
-          <script>
-            $('#star').raty({
-              size: 20,
-              starOff:  '<%= asset_path('star-off.png') %>',
-              starOn:   '<%= asset_path('star-on.png') %>',
-              starHalf: '<%= asset_path('star-half.png') %>',
-              scoreName: 'review[rate]',
-              half: true,
-              target: '#hint1',
-              targetType: 'number'
-            });
-          </script>
+          
         </div>
         <p class = 'comment-input'>comment</p>
         <div class = 'comment-write'>
@@ -31,12 +23,24 @@
           <%= f.hidden_field :movie_id, value:@movie.id %>
         </div>
         <div class= "comment-btn-w">
-          
             <%= f.submit '保存', class: 'comment-btn' %>
-          
         </div>
       </div>
       
       <% end %>
   </div>
 </div>
+<script>
+$(document).ready(function(){
+  $('#star').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn:   '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'comment[rate]',
+    half: true,
+    target: '#hint1',
+    targetType: 'number'
+  });
+});
+</script>
