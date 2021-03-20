@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
+  before_action :select_list
   
   def current_user
     current_user ||= User.find_by(id: session[:user_id])
@@ -11,7 +12,17 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def user_admin
+    if current_user.admin == false
+      redirect_to login_path
+    end
+  end
+  
   def logged_in?
     !current_user.nil?
+  end
+  
+  def select_list
+    @list = [['星なし', 0],['星1個以上', 1],['星2個以上', 2],['星3個以上', 3],['星4個以上', 4],['星5個', 5]]
   end
 end

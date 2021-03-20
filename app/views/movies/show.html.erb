@@ -1,30 +1,34 @@
-<div class = "show-wrapper">
-  <div class = "container">
+<div class="show-wrapper">
+  <div class="container">
     
-    <div class = "show-movie-wrapper">
-      <div class = "show-movie-upper-img">
+    <div class="show-movie-wrapper">
+      <div class="show-movie-upper-img">
         <%= image_tag @movie.image.url, size: '350x480' %>
       </div>
-      <div class = "show-movie-upper-details">
-        <h1 class = "detail-name"><%= @movie.name%></h1>
-        <span class = "detail-open-house">上映日: <%= @movie.open_house.strftime('%Y年%m月%d日') %></span>
+      <div class="show-movie-upper-details">
+        <h1 class="detail-name"><%= @movie.name%></h1>
+        <span class="detail-open-house">上映日: <%= @movie.open_house.strftime('%Y年%m月%d日') %></span>
         /
-        <span class = 'detail-ranning-time'>上映時間: <%= @movie.running_time %>分</span>
+        <span class='detail-ranning-time'>上映時間: <%= @movie.running_time %>分</span>
         <br>
-        <span class = "detail-junle">ジャンル: <%= @junle.name %></span>
+        <%= link_to search_path(junle_id: @junle.id) do %>
+          <span class="detail-junle">ジャンル: <%= @junle.name %></span>
+        <% end %>
         /
-        <span class = 'detail-director'>監督: <%= @director.name %></span>
+        <%= link_to search_path(director_id: @director.id) do %>
+          <span class='detail-director'>監督: <%= @director.name %></span>
+        <% end %>
         /
-        <span class = 'detail-screen-writer'>脚本家: <%= @movie.screen_writer%></span>
-        <p class = "">キャスト: </p>
+        <span class='detail-screen-writer'>脚本家: <%= @movie.screen_writer%></span>
+        <h4 class = "cast">キャスト: </h4>
         <% @casts.each do |cast| %>
-          <%= link_to search_path(id: cast.id) do %>
-            <span class = 'detail-cast'><%= cast.name %></span>,
+          <%= link_to search_path(cast_id: cast.id) do %>
+            <span class='detail-cast'><%= cast.name %></span>
           <% end %>
         <% end %>
-        <div class = "avg">
+        <div class="avg">
           <div class="star-raty-avg" id="star-rate-avg<%= @movie.id %>"></div>
-          <div class = 'star-rate-avg'><%= @average %></div>
+          <div class='star-rate-avg'><%= @average %></div>
         </div>
           <script>
             $('#star-rate-avg<%= @movie.id %>').raty({
@@ -39,14 +43,15 @@
           </script>
           
         <p>あらすじ:</p>
-        <p class = 'detail-summary'><%= @movie.summary %></p>
-        <div class = movie-show-link>
+        <p class='detail-summary'><%= @movie.summary %></p>
+        <div class='movie-show-link'>
+          <i class="far fa-share-square"></i>
           <%= link_to 'この映画をレビューする', new_comment_path(id: @movie.id), method: :get %>
         </div>
       </div>
     </div>
     
-    <h1 class = "movie-comment">この映画に関するコメント</h1>
+    <h1 class="movie-comment">この映画に関するコメント</h1>
     <% @comments.each do |comment| %>
       <div class=comment-index-wrapper>
         <div class="comment-upper">
@@ -88,7 +93,7 @@
               <i class="far fa-heart topic-index-icon unlike-btn" aria-hidden="true"></i>
             <% end %>
           <% end %>
-          <div class = "favorite-user-count">
+          <div class="favorite-user-count">
             いいね！<%= comment.favorite_users.count %>
           </div>
         </div>

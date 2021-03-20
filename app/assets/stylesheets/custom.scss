@@ -4,7 +4,10 @@
   padding:0px;
   font-family: 'Trebuchet';
 }
-h1,h2,h3,h4,h5{
+h1,h2,h3,h4,h5,{
+  margin:0px;
+}
+p{
   margin:0px;
 }
 a{
@@ -65,6 +68,8 @@ a{
         border-right:solid white 0.5px;
         padding-right:25px;
         margin-left:25px;
+        color:white;
+        opacity:0.9;
       }
       .menu-right-end{
         margin-left:50px;
@@ -375,6 +380,10 @@ a{
          background-color:#555555;
          color:white;
        }
+       .cast{
+         margin-top:5px;
+         font-size:15px;
+       }
        .detail-cast{
          background-color:#555555;
          color:white;
@@ -385,11 +394,19 @@ a{
        }
        .star-raty-avg img{
          width:50px;
+         margin:10px 0;
+         
        }
        .star-rate-avg{
          margin-left:20px;
-         font-size:20px;
-         margin-top:3px;
+         font-size:35px;
+         margin-top:12px;
+         color:#FF9D00;
+       }
+       .movie-show-link {
+         margin-top:10px;
+         text-align:right;
+         color:#02C4A4;
        }
        
      

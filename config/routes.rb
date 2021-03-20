@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   post '/favorites',  to: 'favorites#create'
   delete '/favorites', to: 'favorites#destroy'
   
-  get    '/search',  to: 'movies#search'
-
+  get    '/search',     to: 'movies#search'
+  
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

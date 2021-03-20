@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   before_action :authenticate_user,{only:[:new, :create,]}
+  before_action :user_admin,{only:[:new]}
   
   
   def new
@@ -12,6 +13,7 @@ class MoviesController < ApplicationController
   
   def search
     # binding.pry
+    @search_name = params[:search]
     if params[:how_search] == 'movie'
       movie = Movie.where('name like ?', "%#{params[:search]}%")
       @movies = movie.page(params[:page]).per(8)
@@ -24,11 +26,11 @@ class MoviesController < ApplicationController
     elsif params[:how_search] == 'user'
       user = User.find_by('name like ?', "%#{params[:search]}%")
       @movies = user.movies.page(params[:page]).per(8)
-      
+    
     elsif params[:how_search] == 'director'
       director = Director.find_by('name like ?', "%#{params[:search]}%")
       @movies = director.movies.page(params[:page]).per(8)
-      
+     
     elsif params[:how_search] =='raiting'
       avg = Comment.group(:movie_id).average(:rate)
       rate = params[:rate_search].to_i
@@ -40,12 +42,32 @@ class MoviesController < ApplicationController
       end.compact
       @movies = Movie.where(id: matched_movie_ids).page(params[:page]).per(8)
       @rate_name = rate + 1
+      
     elsif params[:how_search] =='junle'
       junle = Junle.find_by('name like ?', "%#{params[:search]}%") 
       @movies= junle.movies.page(params[:page]).per(8)
       
+    elsif  params[:cast_id].present?
+      cast = Actor.find(params[:cast_id])
+      @movies = cast.movies.page(params[:page]).per(8)
+      @search_name = cast.name
+    elsif params[:director_id].present?
+      director = Director.find(params[:director_id])
+      @movies = director.movies.page(params[:page]).per(8)
+      @search_name = director.name
+    elsif params[:junle_id].present?
+      junle = Junle.find(params[:junle_id])
+      @movies = junle.movies.page(params[:page]).per(8)
+      @search_name = junle.name
     end
-    @search_name = params[:search]
+   
+    
+    
+    
+    
+    
+    
+    
    
     
     
@@ -63,7 +85,7 @@ class MoviesController < ApplicationController
   
   def show 
     @movie = Movie.find_by(id: params[:id])
-    @director=Movie.select("directors.name").joins(:movie_directors,:directors).find_by(id: params[:id])
+    @director=Movie.select("directors.name","directors.id").joins(:movie_directors,:directors).find_by(id: params[:id])
     @junle = @movie.junles.first
     @casts = @movie.actors
     @comments = @movie.comments.page(params[:page]).per(10)

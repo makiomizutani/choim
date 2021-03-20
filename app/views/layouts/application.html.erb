@@ -16,9 +16,15 @@
         <div class = "header-up">
             <ul class = "menu-up">
               <% if logged_in? %>
-                <li class = "menu-logout">
-                  <%= link_to '映画情報登録', new_movie_path %>
-                </li>
+                <% if current_user.admin? %>
+                  <li class = "menu-logout">
+                    <%= link_to '映画情報登録', new_movie_path %>
+                  </li>
+                <% else %>
+                  <li class = 'menu-logout'>
+                    <%= current_user.name %>さん
+                  </li>
+                <% end %>
                 <li class = "menu-logout">
                   <%= link_to 'マイページ', user_path(id: current_user.id) %>
                 </li>
@@ -44,7 +50,7 @@
           <%= form_with(url: search_path, method: :get, local: true) do |f| %>
             <div class = "search-wrapper">
               <%= f.text_field :search, class: 'search-form', id: 'search-1' %>
-              <%= f.select :rate_search, [['星なし', 0],['星1個以上', 1],['星2個以上', 2],['星3個以上', 3],['星4個以上', 4],['星5個', 5]], {include_blank:'選択してください'}, {class: 'search-form',id: 'search-2'} %>
+              <%= f.select :rate_search, @list, {include_blank:'選択してください'}, {class: 'search-form',id: 'search-2'} %>
               <ul class = "menu-down-left"> 
                 <li onclick=formSwitch()><%= f.radio_button :how_search, 'movie' ,checked: true %>映画検索</li>
                 <li onclick=formSwitch()><%= f.radio_button :how_search, 'cast' %>CAST検索</li>
