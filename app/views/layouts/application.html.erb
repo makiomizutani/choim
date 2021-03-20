@@ -4,6 +4,8 @@
     <title>Choim</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "https://use.fontawesome.com/releases/v5.6.1/css/all.css" %>
+
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -41,22 +43,38 @@
           <%= link_to image_tag('rogo2.png', class:'rogo-img'), root_path %>
           <%= form_with(url: search_path, method: :get, local: true) do |f| %>
             <div class = "search-wrapper">
-              <%= f.text_field :search, class: 'search-form' %>
-              <ul class = "menu-down-left">
-                <li><%= f.radio_button :how_search, 'movie' %>映画検索</li>
-                <li><%= f.radio_button :how_search, 'cast' %>CAST検索</li>
-                <li><%= f.radio_button :how_search, 'user' %>USER検索</li>
+              <%= f.text_field :search, class: 'search-form', id: 'search-1' %>
+              <%= f.select :rate_search, [['星なし', 0],['星1個以上', 1],['星2個以上', 2],['星3個以上', 3],['星4個以上', 4],['星5個', 5]], {include_blank:'選択してください'}, {class: 'search-form',id: 'search-2'} %>
+              <ul class = "menu-down-left"> 
+                <li onclick=formSwitch()><%= f.radio_button :how_search, 'movie' ,checked: true %>映画検索</li>
+                <li onclick=formSwitch()><%= f.radio_button :how_search, 'cast' %>CAST検索</li>
+                <li onclick=formSwitch()><%= f.radio_button :how_search, 'user' %>USER検索</li>
               </ul>
               <ul class = "menu-down-right">
-                <li><%= f.radio_button :how_search, 'director' %>監督検索</li>
-                <li><%= f.radio_button :how_search, 'raiting' %>評価検索</li>
-                <li><%= f.radio_button :how_search, 'junle' %>ジャンル検索</i>
+                <li onclick=formSwitch()><%= f.radio_button :how_search, 'director' %>監督検索</li>
+                <li onclick=formSwitch()><%= f.radio_button :how_search, 'raiting' %>評価検索</li>
+                <li onclick=formSwitch()><%= f.radio_button :how_search, 'junle' %>ジャンル検索</i>
               </ul>
               <label><%= f.submit :検索, class: 'search-btn'%></label>
             </div>
           <% end %>
         </div>
       </div>
+      <script>
+         function formSwitch() {
+           console.log("fd")
+          radio = document.getElementsByName('how_search')
+          if (radio[4].checked) {
+            document.getElementById('search-1').style.display = "none";
+            document.getElementById('search-2').style.display = "";
+          } else {
+            document.getElementById('search-1').style.display = "";
+            document.getElementById('search-2').style.display = "none";
+          } 
+        }
+         window.addEventListener('load', formSwitch());
+      </script>
+      
     </header>
     <%= yield %>
     <footer>

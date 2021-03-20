@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+  before_action:authenticate_user
+ 
+  
+  
   def new
     # @comment = Comment.new
     @comment = Comment.find_by(user_id: current_user.id, movie_id: params[:id]) || Comment.new
@@ -20,8 +24,6 @@ class CommentsController < ApplicationController
     end
   end
   
- 
-  
   def update
     @comment = Comment.find_by(movie_id: params[:id], id: params[:id])
     if @comment.update(comment: comment_params[:comment], rate: comment_params[:rate])
@@ -37,6 +39,10 @@ class CommentsController < ApplicationController
     redirect_to request.referer
   end
   
+  def average_rating
+    self.class.average(:rate).where(:movie =>self.movie)
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:comment, :movie_id,:rate)

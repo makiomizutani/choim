@@ -26,9 +26,8 @@ class Movie < ApplicationRecord
       Movie.all
     end
   end
+  
+  def rate_avg
+    self.comments.average(:rate)
+  end
 end
-
-
-
-
-

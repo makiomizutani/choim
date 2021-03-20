@@ -1,7 +1,11 @@
 <div class = "search-result-wrapper">
   <div class = "container">
     <% if @movies.present? %>
-      <h1 class = "search-name">'<%= @search_name %>' に関する映画 <%= @movies.count %>件</h1>
+      <% if params[:how_search] =='raiting' %>
+        <h1 class = "search-name">'星<%= @rate_name %>個'でヒットした映画 <%= @movies.count %>件</h1>
+      <% else %>
+        <h1 class = "search-name">'<%= @search_name %>' でヒットした映画 <%= @movies.count %>件</h1>
+      <% end %>
       <div class = "search-result">
         <% @movies[0..11].each do |movie| %>
           <%= link_to movie_path(id: movie.id) do %>

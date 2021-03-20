@@ -22,7 +22,22 @@
             <span class = 'detail-cast'><%= cast.name %></span>,
           <% end %>
         <% end %>
-        <p class = 'detail-rate'><%= @movie.rating%></p>
+        <div class = "avg">
+          <div class="star-raty-avg" id="star-rate-avg<%= @movie.id %>"></div>
+          <div class = 'star-rate-avg'><%= @average %></div>
+        </div>
+          <script>
+            $('#star-rate-avg<%= @movie.id %>').raty({
+              size: 36,
+              starOff:  '<%= asset_path('star-off.png') %>',
+              starOn:'<%= asset_path('star-on.png') %>',
+              starHalf: '<%= asset_path('star-half.png') %>',
+              half: true,
+              readOnly: true,
+              score: <%= @average %>
+            });
+          </script>
+          
         <p>あらすじ:</p>
         <p class = 'detail-summary'><%= @movie.summary %></p>
         <div class = movie-show-link>
@@ -33,13 +48,13 @@
     
     <h1 class = "movie-comment">この映画に関するコメント</h1>
     <% @comments.each do |comment| %>
-      <div class = comment-index-wrapper>
-        <div class = "comment-upper">
-          <div class = "commenet-upper-left">
-            <div class = "commnet-name">
+      <div class=comment-index-wrapper>
+        <div class="comment-upper">
+          <div class="comment-upper-left">
+            <div class="commnet-name">
               <h3><%= comment.user.name %>さんのコメント</h3>
             </div>
-            <div class = "comment-update">
+            <div class="comment-update">
               <%= comment.updated_at.strftime('%Y年%m月%d日%H時%M分') %>
             </div>
           </div>
@@ -56,17 +71,33 @@
               score: <%= comment.rate %>
             });
           </script>
+          
+          
         </div>
-        <div class = "comment-text">
+        <div class="comment-text">
           <p><%= comment.comment %></p>
         </div>
-        <div class = "iine">
+        
+        <div class="iine">
+          <% if !comment.favorite_users.include?(current_user) %>
+            <%= link_to favorites_path(id: comment.id), method: :post do %>
+              <i class="far fa-heart topic-index-icon like-btn" aria-hidden="true"></i>
+            <% end %>
+          <% else %>
+            <%= link_to favorites_path(id: comment.id), method: :delete do %>
+              <i class="far fa-heart topic-index-icon unlike-btn" aria-hidden="true"></i>
+            <% end %>
+          <% end %>
+          <div class = "favorite-user-count">
+            いいね！<%= comment.favorite_users.count %>
+          </div>
         </div>
-        <% if comment.user == current_user.id %>
+        
+        <% if logged_in? && comment.user_id == current_user.id %>
           <%= link_to '削除する', comment_path(id: comment.id), method: :delete, class: 'destory-btn' %>
         <% end %>
       </div>
     <% end %>
     <%= paginate @comments %>
-  </div>
 </div>
+

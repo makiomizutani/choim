@@ -105,7 +105,10 @@ a{
       margin-left:130px;
       vertical-align:middle;
       border:solid 0.2px;
-      
+      display:block;
+    }
+    .search-2{
+      display:none;
     }
     
     .menu-down-left{
@@ -152,13 +155,22 @@ a{
       width:100%;
     }
       .main{
+        position: relative;
         img{
           width:100%;
           height:490px;
         }
-        height:490px;
-        width:100%;
       }
+      .main p{
+          position: absolute;
+          top: 5%;
+          left: 50%;
+          color:white;
+          font-size:260px;
+          font-family: 'Sacramento', cursive;
+        
+      }
+      
     
       
       .topic-movie{
@@ -223,6 +235,10 @@ a{
       height:30px;
       margin-top:5px;
      //text-align:center;効かない？
+    }
+    .date-new-form{
+      height:30px;
+      width:154px;
     }
      .new-area{
        width:474px;
@@ -364,6 +380,18 @@ a{
          color:white;
          margin-right:10px;
        }
+       .avg{
+         display:flex;
+       }
+       .star-raty-avg img{
+         width:50px;
+       }
+       .star-rate-avg{
+         margin-left:20px;
+         font-size:20px;
+         margin-top:3px;
+       }
+       
      
      .movie-comment{
        margin:50px 0px;
@@ -378,15 +406,22 @@ a{
            margin-left:14px;
          }
        .comment-upper-left{
-         margin-left:30px;
+         margin-left:10px;
+         width:35%;
+       }
+       .comment-update{
+         margin-top:5px;
        }
        
-       #star-rate-{
+       .star-raty{
          margin-left:30px;
+         
        }
        .star-rate-score{
-         font-size:20px;
-         margin-left:30px;
+         font-size:35px;
+         margin-left:20px;
+         margin-top:3px;
+         color:#FF9D00;
        }
        .comment-text{
          border-radius:20px;
@@ -396,9 +431,35 @@ a{
          width:95%;
          background-color:#FFFFFF;
        }
+       
+       .iine{
+         display:flex;
+       }
        .comment-text p{
          margin-left:10px;
        }
+       .topic-index-icon{
+         margin-left :10px;
+         font-size:13px;
+         }
+         
+         .like-btn{
+           color: #000000;
+           
+         }
+         .unlike-btn{
+           color:#e54747;
+         }
+         .favorite-user-count{
+           margin-left:10px;
+           margin-top:3px;
+           font-weight:bold;
+         }
+         
+       
+       
+       
+       
        .destroy-btn{
          
          margin-left:300px;

@@ -12,11 +12,11 @@
             </div>
             <div class = "form-group">
               <%= f.label :open_house, '公開日', class: "new-label" %>
-              <%= f.text_field :open_house, class: 'new-form'%>
+              <%= f.date_select :open_house,{use_month_numbers:true,start_year:Time.now.year,end_year:1985,prompt:'選択してください'},{class: 'date-new-form'} %>
             </div>
             <div class = "form-group">
               <%= f.label :running_time, '上映時間', class: "new-label" %>
-              <%= f.text_field :running_time, class: 'new-form'%>
+              <%= f.text_field :running_time, class: 'new-form' %>
             </div>
             <div class = "form-group">
               <%= f.label :director_id,'監督', class: 'new-label' %>

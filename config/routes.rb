@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :movies
   resources :comments, only: [:create, :new,:update,:destroy]
 
-  get 'favorites/index'
-  post '/favorites', to: 'favorites#create'
+  post '/favorites',  to: 'favorites#create'
+  delete '/favorites', to: 'favorites#destroy'
   
   get    '/search',  to: 'movies#search'
 
