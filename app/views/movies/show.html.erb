@@ -28,12 +28,15 @@
         <% end %>
         <div class="avg">
           <div class="star-raty-avg" id="star-rate-avg<%= @movie.id %>"></div>
-          <div class='star-rate-avg'><%= @average %></div>
+          <div class='star-rate-avg-score'><%= @average %></div>
         </div>
           <script>
           $(document).on('turbolinks:load', function(){
+            let children = $('#star-rate-avg<%= @movie.id %> img')
+            if (children.length > 0) {return}
             $('#star-rate-avg<%= @movie.id %>').raty({
               size: 36,
+              number: 5,
               starOff:  '<%= asset_path('star-off.png') %>',
               starOn:'<%= asset_path('star-on.png') %>',
               starHalf: '<%= asset_path('star-half.png') %>',
@@ -68,9 +71,12 @@
           <div class="star-raty" id="star-rate-<%= comment.id %>"></div>
           <div class="star-rate-score"><%= comment.rate %></div>
           <script>
-          $(document).on('turbolinks:load', function() {
+          $(function() {
+            let children = $('#star-rate-<%= comment.id %> img')
+            if (children.length > 0) {return}
             $('#star-rate-<%= comment.id %>').raty({
               size: 36,
+              number: 5,
               starOff:  '<%= asset_path('star-off.png') %>',
               starOn:'<%= asset_path('star-on.png') %>',
               starHalf: '<%= asset_path('star-half.png') %>',
