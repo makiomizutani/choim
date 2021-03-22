@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: choim_production
-  username: choim
-  password: <%= ENV['CHOIM_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
