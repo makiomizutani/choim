@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :authenticate_user,{only:[:new, :create,]}
-  before_action :user_admin,{only:[:new]}
+  before_action :user_admin,{only:[:new,:edit]}
   
   
   def new
@@ -60,17 +60,6 @@ class MoviesController < ApplicationController
       @movies = junle.movies.page(params[:page]).per(8)
       @search_name = junle.name
     end
-   
-    
-    
-    
-    
-    
-    
-    
-   
-    
-    
   end
   
   def create
@@ -90,6 +79,18 @@ class MoviesController < ApplicationController
     @casts = @movie.actors
     @comments = @movie.comments.page(params[:page]).per(10)
     @average = @movie.rate_avg
+  end
+  
+  def edit
+    @movie = Movie.find(params[:id])
+  end
+  def update
+    @movie = Movie.find(params[:id])
+    if @movie.update(movie_params)
+      redirect_to movie_path(id: @movie.id)
+    else
+      render :update
+    end
   end
   
   

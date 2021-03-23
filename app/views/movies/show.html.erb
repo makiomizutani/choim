@@ -5,6 +5,7 @@
       <div class="show-movie-upper-img">
         <%= image_tag @movie.image.url, size: '350x480' %>
       </div>
+      
       <div class="show-movie-upper-details">
         <h1 class="detail-name"><%= @movie.name%></h1>
         <span class="detail-open-house">上映日: <%= @movie.open_house.strftime('%Y年%m月%d日') %></span>
@@ -27,8 +28,10 @@
           <% end %>
         <% end %>
         <div class="avg">
-          <div class="star-raty-avg" id="star-rate-avg<%= @movie.id %>"></div>
-          <div class='star-rate-avg-score'><%= @average %></div>
+          <div class="star-raty-avg" id="star-rate-avg<%= @movie.id %>">
+          </div>
+          <div class='star-rate-avg-score'><%= @average %>
+          </div>
         </div>
           <script>
           $(document).on('turbolinks:load', function(){
@@ -52,6 +55,9 @@
         <div class='movie-show-link'>
           <i class="far fa-share-square"></i>
           <%= link_to 'この映画をレビューする', new_comment_path(id: @movie.id), method: :get %>
+          <% if current_user.admin? %>
+            <%= link_to 'この映画を編集する',edit_movie_path(id: @movie.id), method: :get %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -68,8 +74,10 @@
               <%= comment.updated_at.strftime('%Y年%m月%d日%H時%M分') %>
             </div>
           </div>
-          <div class="star-raty" id="star-rate-<%= comment.id %>"></div>
-          <div class="star-rate-score"><%= comment.rate %></div>
+          <div class="star-raty" id="star-rate-<%= comment.id %>">
+          </div>
+          <div class="star-rate-score"><%= comment.rate %>
+          </div>
           <script>
           $(function() {
             let children = $('#star-rate-<%= comment.id %> img')
@@ -86,9 +94,8 @@
             });
           });
           </script>
-          
-          
         </div>
+        
         <div class="comment-text">
           <p><%= comment.comment %></p>
         </div>
@@ -105,14 +112,19 @@
           <% end %>
           <div class="favorite-user-count">
             いいね！<%= comment.favorite_users.count %>
+            <% if logged_in? && comment.user_id == current_user.id %>
+              <div class = "destroy-btn"> 
+                <i class="far fa-share-square"></i>
+                <%= link_to '削除する', comment_path(id: comment.id), {method: :delete} %>
+              </div>
+            <% end %>
           </div>
         </div>
-        
-        <% if logged_in? && comment.user_id == current_user.id %>
-          <%= link_to '削除する', comment_path(id: comment.id), method: :delete, class: 'destory-btn' %>
-        <% end %>
       </div>
     <% end %>
-    <%= paginate @comments %>
+    
+    
+  <%= paginate @comments %>
+  </div>
 </div>
 

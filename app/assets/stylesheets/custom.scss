@@ -421,6 +421,7 @@ a{
          .comment-upper{
            display:flex;
            margin-left:14px;
+           margin-top:20px;
          }
        .comment-upper-left{
          margin-left:10px;
@@ -443,8 +444,8 @@ a{
        .comment-text{
          border-radius:20px;
          margin-left:14px;
-         margin-top:10px;
-         margin-bottom:20px;
+         margin-top:5px;
+         margin-bottom:5px;
          width:95%;
          background-color:#FFFFFF;
        }
@@ -454,6 +455,7 @@ a{
        }
        .comment-text p{
          margin-left:10px;
+         margin-bottom:5px;
        }
        .topic-index-icon{
          margin-left :10px;
@@ -471,17 +473,14 @@ a{
            margin-left:10px;
            margin-top:3px;
            font-weight:bold;
+           display:flex;
          }
-         
-       
-       
-       
-       
-       .destroy-btn{
-         
-         margin-left:300px;
-         
-       }
+         .destroy-btn{
+           margin-left:20px;
+         }
+        
+          
+        
      
      
      
