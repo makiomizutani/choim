@@ -55,7 +55,7 @@
         <div class='movie-show-link'>
           <i class="far fa-share-square"></i>
           <%= link_to 'この映画をレビューする', new_comment_path(id: @movie.id), method: :get %>
-          <% if current_user.admin? %>
+          <% if logged_in? && current_user.admin? %>
             <%= link_to 'この映画を編集する',edit_movie_path(id: @movie.id), method: :get %>
           <% end %>
         </div>

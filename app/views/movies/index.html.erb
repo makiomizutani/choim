@@ -20,11 +20,17 @@
             </span>
             <div>
             <span class = "index-junle">
-              ジャンル:<%= movie.junle_id%>
+              ジャンル:
+              <% movie.junles.each do |junle| %>
+              <%= junle.name %>
+              <% end %>
             </spam>
             /
             <span class = "index-director">
-              監督:<%= movie.director_id %>
+              監督:
+              <% movie.directors.each do |director| %>
+              <%= director.name %>
+              <% end %>
             </span>
             </div>
             <div class = index-summary>あらすじ:</div>

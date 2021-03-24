@@ -5,10 +5,10 @@ class MoviesController < ApplicationController
   
   def new
     @movie = Movie.new
-    @junles = Junle.all
   end
   def index
     @movies = Movie.all.order(open_house:'DESC').page(params[:page]).per(10)
+    
   end
   
   def search
@@ -64,7 +64,6 @@ class MoviesController < ApplicationController
   
   def create
     @movie = Movie.new(movie_params)
-    
     if @movie.save
       redirect_to movies_path
     else
@@ -97,8 +96,7 @@ class MoviesController < ApplicationController
   
   private
   def movie_params
-    params.require(:movie).permit(:name, :open_house, :running_time, :junle_id, :director_id, :screen_writer, :image, :summary)
-    
+    params.require(:movie).permit(:name, :open_house, :running_time, :screen_writer, :image, :summary,movie_junles_attributes: [:id,:junle_id],movie_directors_attributes: [:id, :director_id])
   end
 end
 

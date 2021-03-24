@@ -1,0 +1,5 @@
+INSERT INTO users (id, name, email, password_digest, created_at, updated_at, admin) VALUES (1,'test','test@test.com','$2a$12$t//Iu0.Hvlvs3kbNBmBc3e/QqUxrc0KbTgx8KG9EI3CwXDzZFlefi','2021-03-12 10:26:01','2021-03-12 10:26:01','false');
+INSERT INTO users (id, name, email, password_digest, created_at, updated_at, admin) VALUES (2,'test2','test2@test.com','$2a$12$KxLRiu1jGSkSSRYNyPkvLO1DACysUGgWmGXQ2ZeGEfvocPCEau/9y','2021-03-12 10:26:20','2021-03-12 10:26:20','false');
+INSERT INTO users (id, name, email, password_digest, created_at, updated_at, admin) VALUES (3,'test3','test3@test.com','$2a$12$A6ydFPYA7ivYKyyp5wAJ.u/6z.nA//ICB/6fjzvR56ovnyk/l2Z62','2021-03-13 05:11:02','2021-03-13 05:11:02','false');
+INSERT INTO users (id, name, email, password_digest, created_at, updated_at, admin) VALUES (4,'mizutani1','makio.mizutani0710@gmail.com','$2a$12$W1d3YEkhwBnbADXx1cR1f.YFuMW2TXhpEUS7gfmBjTZ8HErAHYi3y','2021-03-19 08:33:12','2021-03-19 10:09:42','true');
+INSERT INTO favorites (id, user_id, comment_id, created_at, updated_at) VALUES (1,1,1,'2021-03-18 08:07:42','2021-03-18 08:07:42');

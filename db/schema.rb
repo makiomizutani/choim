@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_19_084059) do
+ActiveRecord::Schema.define(version: 2021_03_23_104242) do
 
   create_table "actors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -81,8 +81,6 @@ ActiveRecord::Schema.define(version: 2021_03_19_084059) do
     t.string "name"
     t.date "open_house"
     t.integer "running_time"
-    t.bigint "junle_id"
-    t.bigint "director_id"
     t.string "screen_writer"
     t.text "summary"
     t.string "image"
