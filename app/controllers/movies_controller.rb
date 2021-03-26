@@ -88,8 +88,14 @@ class MoviesController < ApplicationController
     if @movie.update(movie_params)
       redirect_to movie_path(id: @movie.id)
     else
-      render :update
+      render :edit
     end
+  end
+  
+  def destory
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    redirect_to root_path
   end
   
   

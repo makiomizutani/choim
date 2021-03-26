@@ -19,5 +19,8 @@
         </div>
       <% end %>
     </div>
+    <div class = 'p-edit'>
+      <%= link_to 'プロフィール編集', edit_user_path(id: @user.id), method: :get %>
+    </div>
   </div>
 </div>

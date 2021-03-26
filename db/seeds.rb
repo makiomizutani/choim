@@ -248,6 +248,16 @@ Movie.create!(
       screen_writer:'スティーブ・クローブス',
       summary:'映画史上に残る最強シリーズの歴史的フィナーレ。シリーズ最高の感動と興奮を手に入れよう！',
       image:File.open('./app/assets/images/harrypotter8.jpg')
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+      image:File.open('')
     }
   ]
 )

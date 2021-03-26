@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'pages#top'
   
   resources :users
-  resources :movies, only: [:index,:new,:create,:search,:show,:update,:edit]
+  resources :movies, only: [:index,:new,:create,:search,:show,:update,:edit,:destroy]
   resources :comments, only: [:create, :new,:update,:destroy]
 
   post '/favorites',  to: 'favorites#create'
