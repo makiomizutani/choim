@@ -11,8 +11,6 @@ Movie.create!(
       name:'スパイダーマン',
       open_house:'2002/05/11',
       running_time:'121',
-      junle_id:'1',
-      director_id:'1',
       screen_writer:'デヴィット・コープ',
       summary:'',
       image:File.open('./app/assets/images/spiderman.jpg')
@@ -250,6 +248,24 @@ Movie.create!(
       image:File.open('./app/assets/images/harrypotter8.jpg')
     },
     {
+      name:'浅田家',
+      open_house:'2020/10/02',
+      running_time:'127',
+      junle_id:'19',
+      director_id:'16',
+      screen_writer:'中野量太',
+      summary:'幼いころ、写真好きの父からカメラを譲ってもらった政志（二宮和也）は、昔から写真を撮るのが大好きだった。そんな彼が、家族全員を巻き込んで、消防士、レーサー、ヒーロー、大食い選手権……。それぞれが“なりたかった職業”“やってみたかったこと”をテーマにコスプレし、その姿を撮影したユニークすぎる《家族写真》が、なんと写真界の芥川賞・木村伊兵衛写真賞を受賞！ 受賞をきっかけに日本中の家族から撮影依頼を受け、写真家としてようやく軌道に乗り始めたとき、東日本大震災が起こる――。かつて撮影した家族の安否を確かめるために向かった被災地で、政志が目にしたのは、家族や家を失った人々の姿だった。「家族ってなんだろう？」「写真家の自分にできることは何だろう？」シャッターを切ることができず、自問自答をくり返す政志だったが、ある時、津波で泥だらけになった写真を一枚一枚洗って、家族の元に返すボランティア活動に励む人々と出会う。彼らと共に《写真洗浄》を続け、そこで写真を見つけ嬉しそうに帰っていく人々の笑顔に触れることで、次第に《写真の持つチカラ》を信じられるようになる。そんな時、一人の少女が現れる。「私も家族写真を撮って欲しい！」それは、津波で父親を失った少女の願いだった――。',
+    },
+    {
+      name:'シン・エヴァンゲリオン劇場版',
+      open_house:'2021/03/08',
+      running_time:'155',
+      junle_id:'20',
+      director_id:'17',
+      screen_writer:'庵野秀明',
+      summary:'',
+    },
+    {
       name:'',
       open_house:'//',
       running_time:'',
@@ -257,8 +273,203 @@ Movie.create!(
       director_id:'',
       screen_writer:'',
       summary:'',
-      image:File.open('')
-    }
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },{
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },{
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    {
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },{
+      name:'',
+      open_house:'//',
+      running_time:'',
+      junle_id:'',
+      director_id:'',
+      screen_writer:'',
+      summary:'',
+    },
+    
   ]
 )
 Junle.create!(
@@ -300,8 +511,11 @@ Director.create!(
     {name:'マイク・ニューウェル'},
     {name:'デヴィッド・イェーツ'},
     {name:'ジョン・ファブロー'},
-    {name:'ゴア・ヴァービンスキー'}
-    ]
+    {name:'ゴア・ヴァービンスキー'},
+    {name:'マイケル・ベイ'},
+    {name:'中野量'},
+    {name:'庵野秀明'},
+  ]
 )
 Actor.create!(
   [
@@ -1361,6 +1575,34 @@ MovieJunle.create!(
     movie_id:'24',
     junle_id:'11'
     }
+  ]
+)
+User.create!(
+  [
+    {
+    name: 'makio.mizutani',
+    email: 'makio.mizutani0710@gmail.com',
+    password_digest: 'mm19850710',
+    admin: true
+    },
+    {
+    name: '映画大好き',
+    email: 'movie0710@hotmail.co.jp',
+    password_digest: 'movie19850710',
+    admin: false
+    },
+    {
+    name: 'avg',
+    email: 'avg0710@yahoo.co.jp',
+    password_digest: 'avg20120814',
+    admin: false
+    },
+    {
+    name: 'planet',
+    email: 'palnet@softbank.ne.jp',
+    password_digest: 'planetsoftbank',
+    admin: false
+    },
   ]
 )
   

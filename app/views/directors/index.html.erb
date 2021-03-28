@@ -1,0 +1,16 @@
+<div class = "director-index-wrapper">
+  <div class = "container">
+    <h1>Director一覧</h1>
+    <% @directors.each do |director|%>
+      <div class = "director-index">
+        <%= director.id%>,
+        <%= director.name %>
+        <span class = "info-edit">
+        <%= link_to '編集する',edit_director_path(id: director.id),{method: :get, class: 'd-link-edit'} %>
+        <%= link_to '削除する',director_path(id: director.id), {method: :delete, class: 'd-link-delete'} %>
+        </div>
+      </span>
+    <% end %>
+    <%= link_to 'Director入力画面へ', new_director_path,{class: 'link_info'} %>
+  </div>
+</div>

@@ -5,6 +5,8 @@ class MoviesController < ApplicationController
   
   def new
     @movie = Movie.new
+    @movie.movie_directors.build
+    @movie.movie_junles.build
   end
   def index
     @movies = Movie.all.order(open_house:'DESC').page(params[:page]).per(10)
@@ -77,7 +79,7 @@ class MoviesController < ApplicationController
     @junle = @movie.junles.first
     @casts = @movie.actors
     @comments = @movie.comments.page(params[:page]).per(10)
-    @average = @movie.rate_avg
+    @average = @movie.rate_avg.round(1)
   end
   
   def edit
@@ -100,9 +102,24 @@ class MoviesController < ApplicationController
   
   
   
+  def actor_edit
+    @movie = Movie.find(params[:id])
+  end
+  
+  def actor_update
+    @movie = Movie.find(params[:id])
+    @movie_actor.update(actor_params)
+    redirect_to movie_path(id: @movie.id)
+  end
+  
+  
+  
   private
   def movie_params
     params.require(:movie).permit(:name, :open_house, :running_time, :screen_writer, :image, :summary,movie_junles_attributes: [:id,:junle_id],movie_directors_attributes: [:id, :director_id])
+  end
+  def actor_params
+    params.require(:movie_actor).permit(movie_actors_attributes: [:id,:actor_id])
   end
 end
 
@@ -120,4 +137,4 @@ end
 #     end
 #   end
 
-# @moviews = Movie.where(id: matched_movie_ids)
+# @movie = Movie.where(id: matched_movie_ids)

@@ -1,0 +1,13 @@
+<div class = "users-new-wrapper">
+  <div class = "container">
+    <h1><%= @movie.name %>の俳優の追加</h1>
+    <%= form_with model: @movie_actor, loacl:true do |f|%>
+    <div class = "new-member-entry-form">
+      <%= collection_check_boxes(:actor, :actor_ids, Actor.all, :id, :name) do |c| %>
+        <%= c.label {c.check_box + c.text } %>
+      <% end %>
+        <%= f.submit "追加する", class: "btn-block"%>
+    <% end %>
+    <%= link_to 'Actor登録', new_actor_path %>
+  </div>
+</div>
