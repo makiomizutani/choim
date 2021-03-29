@@ -79,12 +79,14 @@ class MoviesController < ApplicationController
     @junle = @movie.junles.first
     @casts = @movie.actors
     @comments = @movie.comments.page(params[:page]).per(10)
-    @average = @movie.rate_avg.round(1)
+    @average = @movie.rate_avg
   end
   
   def edit
     @movie = Movie.find(params[:id])
+    
   end
+  
   def update
     @movie = Movie.find(params[:id])
     if @movie.update(movie_params)
@@ -100,6 +102,18 @@ class MoviesController < ApplicationController
     redirect_to root_path
   end
   
+  def actor_new
+    @movie = Movie.find(params[:id])
+    @movie.movie_actors.build
+  end
+  
+  def actor_create
+    @movie = Movie.find(params[:id])
+    params[:actor_ids][:actor_ids].each do |id|
+      @movie.movie_actors.create!(actor_id: id)
+    end
+    redirect_to movie_path(id: @movie.id)
+  end
   
   
   def actor_edit
@@ -108,7 +122,9 @@ class MoviesController < ApplicationController
   
   def actor_update
     @movie = Movie.find(params[:id])
-    @movie_actor.update(actor_params)
+    params[:actor_ids][:actor_ids].each do |id|
+      @movie.movie_actors.update!(actor_id: id)
+    end
     redirect_to movie_path(id: @movie.id)
   end
   
@@ -119,7 +135,7 @@ class MoviesController < ApplicationController
     params.require(:movie).permit(:name, :open_house, :running_time, :screen_writer, :image, :summary,movie_junles_attributes: [:id,:junle_id],movie_directors_attributes: [:id, :director_id])
   end
   def actor_params
-    params.require(:movie_actor).permit(movie_actors_attributes: [:id,:actor_id])
+    params.require(:actor_ids).permit(:actor_ids)
   end
 end
 

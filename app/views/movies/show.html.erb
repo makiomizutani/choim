@@ -30,8 +30,11 @@
         <div class="avg">
           <div class="star-raty-avg" id="star-rate-avg<%= @movie.id %>">
           </div>
-          <div class='star-rate-avg-score'><%= @average %>
-          </div>
+          <% if @average != nil%>
+            <div class='star-rate-avg-score'>
+              <%= @average.round(1) %>
+            </div>
+          <% end %>
         </div>
           <script>
           $(document).on('turbolinks:load', function(){

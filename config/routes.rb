@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   delete '/favorites', to: 'favorites#destroy'
   
   get    '/search',                  to: 'movies#search'
+  get    '/movies/:id/actor_new',    to: 'movies#actor_new'
+  post   '/movies/:id/actor_new',    to: 'movies#actor_create'
   get    '/movies/:id/actor_edit',   to: 'movies#actor_edit'
-  post   '/movies/:id/actor_update', to: 'movies#actor_update'
+  post   '/movies/:id/actor_edit',   to: 'movies#actor_update'
   get    '/login',                   to: 'sessions#new'
   post   '/login',                   to: 'sessions#create'
   delete '/logout',                  to: 'sessions#destroy'
