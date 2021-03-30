@@ -20,11 +20,13 @@
           <span class='detail-director'>監督: <%= @director.name %></span>
         <% end %>
         /
-        <span class='detail-screen-writer'>脚本家: <%= @movie.screen_writer%></span>
-        <h4 class = "cast">キャスト: </h4>
-        <% @casts.each do |cast| %>
-          <%= link_to search_path(cast_id: cast.id) do %>
-            <span class='detail-cast'><%= cast.name %></span>
+        <% if @casts != nil %>
+          <span class='detail-screen-writer'>脚本家: <%= @movie.screen_writer%></span>
+          <h4 class = "cast">キャスト: </h4>
+          <% @casts.each do |cast| %>
+            <%= link_to search_path(cast_id: cast.id) do %>
+              <span class='detail-cast'><%= cast.name %></span>
+            <% end %>
           <% end %>
         <% end %>
         <div class="avg">
@@ -62,6 +64,9 @@
             <%= link_to 'この映画を編集する',edit_movie_path(id: @movie.id), method: :get %>
             <%= link_to 'この映画を削除する',movie_path(id: @movie.id),{method: :delete} %>
           <% end %>
+          <div>
+          <%= link_to 'この映画のキャストを登録する',"/movies/#{@movie.id}/actor_edit"%>
+          </div>
         </div>
       </div>
     </div>

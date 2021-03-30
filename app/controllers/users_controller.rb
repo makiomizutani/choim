@@ -28,6 +28,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path(id:@user.id)
     else
+      flash.now[:danger] = "すでに登録されています。"
       render :edit
     end
   end

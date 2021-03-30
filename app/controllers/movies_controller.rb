@@ -102,31 +102,29 @@ class MoviesController < ApplicationController
     redirect_to root_path
   end
   
-  def actor_new
-    @movie = Movie.find(params[:id])
-    @movie.movie_actors.build
-  end
-  
-  def actor_create
-    @movie = Movie.find(params[:id])
-    params[:actor_ids][:actor_ids].each do |id|
-      @movie.movie_actors.create!(actor_id: id)
-    end
-    redirect_to movie_path(id: @movie.id)
-  end
-  
-  
+  # TODO movieが登録されていない場合の処理
   def actor_edit
-    @movie = Movie.find(params[:id])
+    @movie = Movie.find(params[:id]) 
+    #@movie.movie_actors.find_by(movie_id: @movie.id, actor_id:params[:id]) || @movie.movie_actors.new
+  
   end
   
   def actor_update
-    @movie = Movie.find(params[:id])
-    params[:actor_ids][:actor_ids].each do |id|
-      @movie.movie_actors.update!(actor_id: id)
-    end
+    @movie = Movie.find(params[:id]) 
+    @movie.update_attributes(actor_params)
     redirect_to movie_path(id: @movie.id)
+     
   end
+  
+  
+  # # def actor_update
+  # #   @movie = Movie.find(params[:id])
+  # #   @movie.movie_actors.find_by(movie_id: @movie.id, actor_id: params[:id])
+  # #   actor_params[:actor_ids].each do |id|
+  # #     @movie.update_attributes(actor_params)
+  # #   end
+  #   redirect_to movie_path(id: @movie.id)
+  # end
   
   
   
@@ -135,7 +133,11 @@ class MoviesController < ApplicationController
     params.require(:movie).permit(:name, :open_house, :running_time, :screen_writer, :image, :summary,movie_junles_attributes: [:id,:junle_id],movie_directors_attributes: [:id, :director_id])
   end
   def actor_params
-    params.require(:actor_ids).permit(:actor_ids)
+    if params[:movie]
+      params.require(:movie).permit({actor_ids: []}) 
+    else
+      {actor_ids: []}
+    end
   end
 end
 

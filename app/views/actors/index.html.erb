@@ -7,7 +7,7 @@
         <%= actor.name %>
         <span class = "info-edit">
         <%= link_to '編集する',edit_actor_path(id: actor.id),{method: :get, class: 'd-link-edit'} %>
-        <%= link_to '削除する',actor_path(id: actor.id),{method: :deleted,class: 'd-link-delete'} %>
+        <%= link_to '削除する',actor_path(id: actor.id),{method: :delete,class: 'd-link-delete'} %>
         </div>
       </span>
     <% end %>

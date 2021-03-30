@@ -1,9 +1,9 @@
 <div class = "users-new-wrapper">
   <div class = "container">
-    <h1><%= @movie.name %>の出演俳優の編集</h1>
-    <%= form_with scope: :actor_ids, local:true do |f|%>
+    <h1><%= @movie.name %>の出演俳優の登録</h1>
+    <%= form_with model: @movie,url:actor_create_path(@movie), local:true do |f|%>
     <div class = "new-member-entry-form">
-        <%= f.collection_check_boxes(:actor_ids, Actor.all, :id, :name, include_hidden: false) do |c| %>
+        <%= f.collection_check_boxes(:actor_ids, Actor.all, :id, :name,include_hidden: false) do |c| %>
           <%= c.label {c.check_box + c.text } %>
         <% end %>
       <%= f.submit "追加する", class: "btn-block"%>
