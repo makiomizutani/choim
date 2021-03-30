@@ -4,8 +4,10 @@
         <div class = "index-wrapper-up">
           <div class = "index-image">
           <%= link_to movie_path(id: movie.id) do %>
-            <% if movie.image != nil %>
-              <%= image_tag movie.image.url, size: '150x200' %>  
+            <% if movie.image.present? %>
+              <%= image_tag movie.image.url, size: '150x200' %> 
+            <% else %>
+              <div class = "empty-img"></div>
             <% end %>
           <% end %>
           </div>
@@ -14,7 +16,9 @@
               <%= movie.name %>
             </h1>
             <span class= "index-open-house">
+              <% if movie.image.present? %>
               上映日:<%= movie.open_house.strftime('%Y年%m月%d日') %>
+              <% end %>
             </span>
             /
             <span class = "index-time">

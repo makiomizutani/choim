@@ -1,6 +1,7 @@
 <div class = "director-index-wrapper">
   <div class = "container">
     <h1>Actor一覧</h1>
+    <%= link_to 'Actor入力画面へ', new_actor_path,{class: 'link_info'}%>
     <% @actors.each do |actor|%>
       <div class = "director-index">
         <%= actor.id%>,

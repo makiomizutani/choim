@@ -3,21 +3,27 @@
     
     <div class="show-movie-wrapper">
       <div class="show-movie-upper-img">
+        <% if @movie.image.present? %>
         <%= image_tag @movie.image.url, size: '350x480' %>
+        <% end %>
       </div>
       
       <div class="show-movie-upper-details">
         <h1 class="detail-name"><%= @movie.name%></h1>
-        <span class="detail-open-house">上映日: <%= @movie.open_house.strftime('%Y年%m月%d日') %></span>
+        <span class="detail-open-house">上映日: <%= display_open_house(@movie) %></span>
         /
         <span class='detail-ranning-time'>上映時間: <%= @movie.running_time %>分</span>
         <br>
-        <%= link_to search_path(junle_id: @junle.id) do %>
-          <span class="detail-junle">ジャンル: <%= @junle.name %></span>
+        <% if @junle.present? %>
+          <%= link_to search_path(junle_id: @junle.id) do %>
+            <span class="detail-junle">ジャンル: <%= @junle.name %></span>
+          <% end %>
         <% end %>
         /
-        <%= link_to search_path(director_id: @director.id) do %>
-          <span class='detail-director'>監督: <%= @director.name %></span>
+        <% if @director.present? %>
+          <%= link_to search_path(director_id: @director.id) do %>
+            <span class='detail-director'>監督: <%= @director.name %></span>
+          <% end %>
         <% end %>
         /
         <% if @casts != nil %>
@@ -63,9 +69,12 @@
           <% if logged_in? && current_user.admin? %>
             <%= link_to 'この映画を編集する',edit_movie_path(id: @movie.id), method: :get %>
             <%= link_to 'この映画を削除する',movie_path(id: @movie.id),{method: :delete} %>
+            <div >
+              <%= link_to 'この映画のキャストを登録する',"/movies/#{@movie.id}/actor_edit"%>
+            </div>
           <% end %>
           <div>
-          <%= link_to 'この映画のキャストを登録する',"/movies/#{@movie.id}/actor_edit"%>
+          
           </div>
         </div>
       </div>
@@ -85,7 +94,7 @@
           </div>
           <div class="star-raty" id="star-rate-<%= comment.id %>">
           </div>
-          <div class="star-rate-score"><%= comment.rate %>
+          <div class="star-rate-score"><%= comment.rate.round(1) %>
           </div>
           <script>
           $(function() {

@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
   end
   
   def update
-    @comment = Comment.find_by(movie_id: params[:id], id: params[:id])
+    @comment = Comment.find(params[:id])
     if @comment.update(comment: comment_params[:comment], rate: comment_params[:rate])
       redirect_to movie_path(id: comment_params[:movie_id])
     else
@@ -45,6 +45,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:comment, :movie_id,:rate)
+    params.require(:comment).permit(:comment, :movie_id, :rate)
   end
 end
