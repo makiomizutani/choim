@@ -6,7 +6,8 @@ class MoviesController < ApplicationController
   def new
     @movie = Movie.new
     @movie.movie_directors.build
-    @movie.movie_junles.build
+    @movie.movie_junles.build 
+    
   end
   def index
     @movies = Movie.all.order(open_house:'DESC').page(params[:page]).per(10)
@@ -132,7 +133,7 @@ class MoviesController < ApplicationController
   
   private
   def movie_params
-    params.require(:movie).permit(:name, :open_house, :running_time, :screen_writer, :image, :summary,　movie_junles_attributes: [:id,:junle_id],movie_directors_attributes: [:id, :director_id])
+    params.require(:movie).permit(:name, :open_house, :running_time, :screen_writer, :image, :summary, movie_junles_attributes: [:id, :junle_id], movie_directors_attributes: [:id, :director_id])
   end
   def actor_params
     if params[:movie]
