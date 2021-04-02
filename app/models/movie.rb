@@ -1,5 +1,6 @@
 class Movie < ApplicationRecord
   mount_uploader :image, ImageUploader
+  validates :name, presence: true
   
   has_many :comments, dependent: :destroy
   has_many :users, through: :comments
