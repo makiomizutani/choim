@@ -2,7 +2,7 @@
   <div class = "container">
     <% if @movies.present? %>
       <% if params[:how_search] =='raiting' %>
-        <h1 class = "search-name">'星<%= @rate_name %>個'でヒットした映画 <%= @movies.count %>件</h1>
+        <h1 class = "search-name">'星<%= @rate_name %>個以上'でヒットした映画 <%= @movies.count %>件</h1>
       <% else %>
         <h1 class = "search-name">'<%= @search_name %>' でヒットした映画 <%= @movies.count %>件</h1>
       <% end %>

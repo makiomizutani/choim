@@ -7,33 +7,45 @@ class MoviesController < ApplicationController
     @movie = Movie.new
     @movie.movie_directors.build
     @movie.movie_junles.build 
-    
   end
   def index
     @movies = Movie.all.order(open_house:'DESC').page(params[:page]).per(10)
-    
-    
   end
   
   def search
-    # binding.pry
     @search_name = params[:search]
     if params[:how_search] == 'movie'
       movie = Movie.where('name like ?', "%#{params[:search]}%")
       @movies = movie.page(params[:page]).per(8)
       
+      
     elsif params[:how_search] == 'cast'
-      actor = Actor.find_by('name like ?', "%#{params[:search]}%")
+      actor = Actor.where('name like ?', "%#{params[:search]}%")
+      if actor.present?
+        @movies = actor.movies.page(params[:page]).per(8)
+      else
+        @movies = []
+      end
       #@movies = Movie.select('movie.name').joins(:movie_actors,:actors).where(actors.name =>'ダニエル・ラドクリフ')
-      @movies= actor.movies.page(params[:page]).per(8)
       
     elsif params[:how_search] == 'user'
-      user = User.find_by('name like ?', "%#{params[:search]}%")
-      @movies = user.movies.page(params[:page]).per(8)
-    
+      user = User.where('name like ?', "%#{params[:search]}%")
+      if user.present?
+        @movies = user.movies.page(params[:page]).per(8)
+      else
+        @movies = []
+      end
+        
+      
+      
     elsif params[:how_search] == 'director'
-      director = Director.find_by('name like ?', "%#{params[:search]}%")
-      @movies = director.movies.page(params[:page]).per(8)
+      director = Director.where('name like ?', "%#{params[:search]}%")
+      if director.present?
+        @movies = director.movies.page(params[:page]).per(8)
+      else
+        @movies = []
+      end
+      
      
     elsif params[:how_search] =='raiting'
       avg = Comment.group(:movie_id).average(:rate)
@@ -45,26 +57,30 @@ class MoviesController < ApplicationController
         end
       end.compact
       @movies = Movie.where(id: matched_movie_ids).page(params[:page]).per(8)
-      @rate_name = rate + 1
+      @rate_name = rate
       
     elsif params[:how_search] =='junle'
       junle = Junle.find_by('name like ?', "%#{params[:search]}%") 
       @movies= junle.movies.page(params[:page]).per(8)
       
     elsif  params[:cast_id].present?
-      cast = Actor.find(params[:cast_id])
+      cast = Actor.search_act(params[:search])
       @movies = cast.movies.page(params[:page]).per(8)
       @search_name = cast.name
+      
     elsif params[:director_id].present?
       director = Director.find(params[:director_id])
       @movies = director.movies.page(params[:page]).per(8)
       @search_name = director.name
+      
     elsif params[:junle_id].present?
-      junle = Junle.find(params[:junle_id])
+      junle = Junle.find_by(params[:junle_id])
       @movies = junle.movies.page(params[:page]).per(8)
       @search_name = junle.name
     end
   end
+  
+  
   
   def create
     @movie = Movie.new(movie_params)
@@ -86,8 +102,6 @@ class MoviesController < ApplicationController
   
   def edit
     @movie = Movie.find(params[:id])
-   
-    
   end
   
   def update
@@ -116,7 +130,6 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id]) 
     @movie.update_attributes(actor_params)
     redirect_to movie_path(id: @movie.id)
-     
   end
   
   
@@ -129,6 +142,14 @@ class MoviesController < ApplicationController
   #   redirect_to movie_path(id: @movie.id)
   # end
   
+  def search_act(search)
+    if search
+      Actor.where('name like ?', "%#{params[:search]}%")
+    else
+      Actor.none
+    end
+  end
+      
   
   
   private
@@ -143,9 +164,6 @@ class MoviesController < ApplicationController
     end
   end
 end
-
-
-
 #avg={6=>0.3e1, 7=>0.35e1, 15=>0.253625011444092e1, 16=>0.35e1}
 
 #matched_movie_ids =
