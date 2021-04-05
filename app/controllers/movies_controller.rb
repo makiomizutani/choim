@@ -22,7 +22,13 @@ class MoviesController < ApplicationController
     elsif params[:how_search] == 'cast'
       actor = Actor.where('name like ?', "%#{params[:search]}%")
       if actor.present?
-        @movies = actor.movies.page(params[:page]).per(8)
+        if actor.length == 1
+          @movies = actor.movies.page(params[:page]).per(8)
+        else
+          actor_ids = []
+          actor.each {|a| actor_ids.push(a.id)}  
+          @movies = Movie.joins(:movie_actors).where('actor_id IN(?)', actor_ids).page(params[:page]).per(8)
+        end
       else
         @movies = []
       end
@@ -64,7 +70,7 @@ class MoviesController < ApplicationController
       @movies= junle.movies.page(params[:page]).per(8)
       
     elsif  params[:cast_id].present?
-      cast = Actor.search_act(params[:search])
+      cast = Actor.find(params[:cast_id])
       @movies = cast.movies.page(params[:page]).per(8)
       @search_name = cast.name
       
@@ -149,6 +155,8 @@ class MoviesController < ApplicationController
       Actor.none
     end
   end
+  
+
       
   
   
