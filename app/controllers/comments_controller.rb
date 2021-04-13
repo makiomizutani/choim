@@ -4,12 +4,7 @@ class CommentsController < ApplicationController
   
   
   def new
-    # @comment = Comment.new
     @comment = Comment.find_by(user_id: current_user.id, movie_id: params[:id]) || Comment.new
-    
-    #if @comment.nil?
-      #@comment = Comment.new
-    #end
     @movie = Movie.find(params[:id])
   end
   
@@ -39,7 +34,7 @@ class CommentsController < ApplicationController
     redirect_to request.referer
   end
   
-  def average_rating
+  def average_rating #各映画、星評価の平均点数
     self.class.average(:rate).where(:movie =>self.movie)
   end
 

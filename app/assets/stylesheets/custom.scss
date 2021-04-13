@@ -17,6 +17,7 @@ a{
 .star-raty{
   img {
     width:50px;
+    margin-bottom:10px;
   }
 }
 
@@ -440,7 +441,7 @@ a{
        }
        
        .star-raty{
-         margin-left:30px;
+         margin-left:30p
          
        }
        .star-rate-score{
@@ -511,19 +512,26 @@ a{
        .comment-write-upper{
          display:flex;
        }
+  
+       .comment-img img{
+         width:390px;
+         background-size: cover;
+         margin-left:12px;
+         border-radius:20px;
+       }
        
        .comment-description{
-         margin:0 10px;
+         width:50%;
+         text-align:center;
        }
-         .comment-img{
-           margin-top:12px;
-           margin-left:12px;
-         }
-           .comment-img img{
-             border-radius:20px;
-           }
          .comment-movie {
            font-size:30px;
+           margin-bottom:20px;
+         }
+         #hint1{
+           font-size:30px;
+           color:#FF9D00;
+           margin-top:20px;
          }
          
       

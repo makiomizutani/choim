@@ -12,12 +12,11 @@ class MoviesController < ApplicationController
     @movies = Movie.all.order(open_house:'DESC').page(params[:page]).per(10)
   end
   
-  def search
+  def search 
     @search_name = params[:search]
     if params[:how_search] == 'movie'
       movie = Movie.where('name like ?', "%#{params[:search]}%")
       @movies = movie.page(params[:page]).per(8)
-      
       
     elsif params[:how_search] == 'cast'
       actor = Actor.where('name like ?', "%#{params[:search]}%")
@@ -69,6 +68,7 @@ class MoviesController < ApplicationController
       junle = Junle.find_by('name like ?', "%#{params[:search]}%") 
       @movies= junle.movies.page(params[:page]).per(8)
       
+      #以下q:
     elsif  params[:cast_id].present?
       cast = Actor.find(params[:cast_id])
       @movies = cast.movies.page(params[:page]).per(8)
@@ -125,7 +125,7 @@ class MoviesController < ApplicationController
     redirect_to root_path
   end
   
-  # TODO movieが登録されていない場合の処理
+
   def actor_edit
     @movie = Movie.find(params[:id]) 
     #@movie.movie_actors.find_by(movie_id: @movie.id, actor_id:params[:id]) || @movie.movie_actors.new

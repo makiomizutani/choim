@@ -5,7 +5,7 @@
       <div class = "comment-write-wrapper">
         <div class = "comment-write-upper">
           <div class = "comment-img">
-            <%= image_tag @movie.image.url,size:'330x270' %>
+            <%= image_tag @movie.image.url %>
           </div>
           <div class = comment-description>
             <h1 class = "comment-movie"><%= @movie.name %></h1>
@@ -13,7 +13,9 @@
               <%= f.hidden_field :rate, id: :review_star %>
               
             </div>
-            <span id = 'hint1'></span>
+            <div class = "hint">
+              <span id = 'hint1'></span>
+            </div>
           </div>
           
         </div>
@@ -40,12 +42,14 @@ $(document).ready(function(){
     starHalf: '<%= asset_path('star-half.png') %>',
     scoreName: 'comment[rate]',
     half: true,
+    halfShow    : true,
     target: '#hint1',
     targetType: 'number',
     targetKeep: true,
-    precision  : true,
-    round      : { down: .25, full: .6, up: .76 }, 
-    click: function(score, evt) {               
+    precision: true,
+    round: { down: .25, full: .6, up: .76 },      
+    click: function(score, evt) {
+    alert('ID: ' + this.id + "\nscore: " + score + "\nevent: " + evt);
     var score = Math.round(score*2)/2;
 }
   });
