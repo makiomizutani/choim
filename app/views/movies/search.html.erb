@@ -17,7 +17,10 @@
         <% end %>
         <%= paginate @movies %>
       </div>
-      
+    <% elsif @movies = nil%> 
+      <div class = "no-hit">
+        <p>ヒットしませんでした</p>
+      </div>
     <% else %>
       <div class = "no-hit">
         <p>ヒットしませんでした</p>

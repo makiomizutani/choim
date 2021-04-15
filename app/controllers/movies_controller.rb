@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
   end
   
   def search 
+    
     @search_name = params[:search]
     if params[:how_search] == 'movie'
       movie = Movie.where('name like ?', "%#{params[:search]}%")
@@ -67,7 +68,6 @@ class MoviesController < ApplicationController
     elsif params[:how_search] =='junle'
       junle = Junle.find_by('name like ?', "%#{params[:search]}%") 
       @movies= junle.movies.page(params[:page]).per(8)
-      
       #以下q:
     elsif  params[:cast_id].present?
       cast = Actor.find(params[:cast_id])
