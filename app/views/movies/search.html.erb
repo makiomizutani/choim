@@ -10,7 +10,7 @@
         <% @movies[0..11].each do |movie| %>
           <%= link_to movie_path(id: movie.id) do %>
             <div class = "search-result-index">
-              <%= image_tag movie.image.url,size:'210x300' %>
+              <%= image_tag movie.image.url %>
               <h1><%= movie.name %></h1>
             </div>
           <% end %>

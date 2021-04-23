@@ -1,0 +1,340 @@
+@media(max-width: 480px){
+  .container{
+    width:90%;
+  }
+  .header-wrapper{
+    height:100px;
+    width:100vm;
+  }
+  .header-up{
+    height:30px;
+    width:100%;
+  }
+  
+  .menu-up{
+    padding-top:4px;
+    font-size:7px;
+      }
+  
+  .menu-logout{
+        padding-right:10px;
+        margin-left:5px;
+        font-size:15px;
+      }
+  .menu-end-logout{
+        margin-left:10px;
+        margin-right:10px;
+        font-size:15px;
+      }
+      
+  .header-down{
+      height:70px;
+      width:100%;
+    }
+  .rogo-img{
+      height:60px;
+      width:60px;
+      margin-top:2px;
+      margin-left:20px;
+    }
+  .search-wall{
+    display:flex;
+  }
+  .search-wrapper{
+    display:block;
+    width:330px;
+    height:60px;
+  }
+    
+    .search-form{
+      height:10px;
+      width:205px;
+      margin-left:25px;
+      margin-top:10px;
+      vertical-align:middle;
+    }
+  
+      .menu-down-left{
+        margin-left:25px;
+        margin-top:1px;
+        margin-bottom:0px;
+        font-size:11px;
+        display:flex;
+      }
+      
+      .menu-down-left li{
+          margin-bottom:0px;
+          margin-right:10px;
+        }
+    
+    .menu-down-right{
+      margin-left:25px;
+      margin-top:1px;
+      font-size:11px;
+      display:flex;
+    }
+      .menu-down-right li{
+        margin-bottom:1px;
+        margin-right:10px;
+      }
+    
+    
+    .search-btn{
+      float:left;
+      margin-left:0px;
+      width:20px;
+      height:20px;
+    }
+  .main{
+    position: relative;
+      img{
+        width:100%;
+        height:400px;
+      }
+  }
+  .main p{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    color:white;
+    font-size:130px;
+    
+  }
+  .topic-movie{
+    margin-top:10px;
+    font-size:20px;
+  }
+  .movie-index-wrapper{
+    margin-top:10px;
+    width:100px;
+    margin-bottm:10px;
+  }
+  
+  .movie-index img{
+    border-radius: 20px;
+    width:100px;
+    height:100px;
+  }
+  .movie-index-name{
+    font-size:15px;
+    margin-top:5px;
+  }
+
+  //登録フォーム
+  .entry-name{
+      margin-top:30px;
+    
+    }
+    .new-member-entry-form{
+      margin-top:30px;
+      padding-top:10px;
+    }
+    .form-group{
+      margin-bottom:10px;
+    }
+    
+    .info-add{
+      font-size:20px;
+   
+    }
+    .new-label{
+      font-size:20px;
+      margin-left:30px;
+    }
+    .new-form{
+      width:100%;
+      height:20px;
+      margin-top:5px;
+     //text-align:center;効かない？
+    }
+    .date-new-form{
+      height:20px;
+      width:32%;
+    }
+     .new-area{
+       width:100%;
+      height:200px;
+      margin-top:5px;
+    }
+    .btn-block{
+      width:40%;
+      height:70px;
+      margin-top:80px;
+      margin-bottom:20px;
+      font-size:20px;
+    }
+    #movie_junle_id{
+      width:400px;
+    }
+    #movie_image{
+      width:400px;
+    }
+  
+   //index
+    .index-wrapper-up{
+      text-align:center;
+      margin-top:20px;
+      width:100%;
+      height:214px;
+      }
+      .index-image img{
+        width:100px;
+        height:100px;
+      }
+      .index-description{
+        margin-left:10px;
+      }
+      .index-name{
+        margin-top:5px;
+        font-size:16px;
+        }
+      .index-summary{
+        font-size:14px;
+        margin-top:5px;
+      }
+      .index-movie-summary{
+        width:100%;
+        height:60px;
+        margin-bottom:20px;
+        overflow: hidden;
+        position:relative;
+        text-overflow: ellipsis;
+      }
+      
+      //search
+      .search-result-wrapper{
+        margin-top:20px;
+      }
+        .search-name{
+          font-size:20px;
+        }
+          .search-result-index{
+            width:70px;
+            margin-top:30px;
+          }
+            .search-result-index img{
+              border-radius:15px;
+              width:70px;
+              height:100px;
+            }
+            
+            .search-result-index h1{
+              font-size:10px;
+              margin-top:10px;
+            }
+        .no-hit{
+          width:100%;
+          height:320px;
+        }
+          .no-hit p{
+            margin-top:100px;
+            font-size:20px;
+            font-weght:bold;
+            opacity:0.7;
+          }
+          
+  //show
+  .show-movie-wrapper{
+     margin-top:30px;
+   }
+       .show-movie-upper-img img{
+         margin:5px;
+         width:100px;
+         height:150px;
+       }
+       .show-movie-upper-details{
+         margin:10px;
+       }
+       .show-movie-upper-details h1{
+         font-size:20px;
+       }
+       .show-movie-upper-details p{
+         font-size:10px;
+         margin-bottom:1px;
+       }
+       .show-movie-upper-details span{
+         font-size:10px;
+         margin-bottom:1px;
+       }
+       .cast{
+         margin-top:2px;
+         font-size:10px;
+       }
+       .star-raty-avg img{
+         width:20px;
+         margin:5px 0;
+         
+       }
+       .star-rate-avg-score{
+         margin-left:20px;
+         font-size:10px;
+         margin-top:12px;
+       }
+       .movie-show-link {
+         margin-top:10px;
+       }
+       
+     
+     .movie-comment{
+       margin:10px 0px;
+       
+     }
+       .comment-index-wrapper{
+         margin-bottom:10px;
+       }
+         .comment-upper{
+           margin-left:5px;
+           margin-top:10px;
+         }
+       .comment-upper-left{
+         margin-left:5px;
+         width:35%;
+       }
+       .comment-update{
+         margin-top:5px;
+       }
+       
+      .star-raty{
+        margin-left:10p
+        img {
+          width:20px;
+        } 
+       }
+       .star-rate-score{
+         font-size:15px;
+         margin-left:10px;
+         margin-top:3px;
+      
+       }
+       .comment-text{
+  
+         margin-left:14px;
+         margin-top:5px;
+         margin-bottom:5px;
+         width:95%;
+       }
+       .comment-text p{
+         margin-left:5px;
+         margin-bottom:5px;
+       }
+       .topic-index-icon{
+         margin-left :5px;
+         font-size:10px;
+         }
+         
+         .favorite-user-count{
+           margin-left:5px;
+           margin-top:3px;
+           font-weight:bold;
+           display:flex;
+         }
+         .destroy-btn{
+           margin-left:10px;
+         }
+        
+          
+          
+}
+  
+
+
