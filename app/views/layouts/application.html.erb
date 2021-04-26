@@ -15,36 +15,35 @@
     <header>
       <div class = 'header-wrapper'>
         <div class = "header-up">
-            <ul class = "menu-up">
-              <% if logged_in? %>
-                <% if current_user.admin? %>
-                  <li class = "menu-logout">
-                    <%= link_to '映画情報登録', new_movie_path %>
-                  </li>
-                <% else %>
-                  <li class = 'menu-logout'>
-                    <%= current_user.name %>さん
-                  </li>
-                <% end %>
+          <ul class = "menu-up">
+            <% if logged_in? %>
+              <% if current_user.admin? %>
                 <li class = "menu-logout">
-                  <%= link_to 'マイページ', user_path(id: current_user.id) %>
-                </li>
-                <li class = "menu-end-logout">
-                  <%= link_to 'ログアウト', logout_path, method: :delete,data: {confirm: '本当にログアウトしますか？'} %>
+                  <%= link_to '映画情報登録', new_movie_path %>
                 </li>
               <% else %>
-                <li class = "menu-right">
-                  <%= link_to '新規USER', new_user_path %>
-                </li>
-                <li class = "menu-right">
-                  <%= link_to 'ログイン', login_path %>
-                </li>
-                <li class = "menu-right-end">
-                  <%= link_to 'top', root_path %>
+                <li class = 'menu-logout'>
+                  <%= current_user.name %>さん
                 </li>
               <% end %>
-            </ul>
-          
+              <li class = "menu-logout">
+                <%= link_to 'マイページ', user_path(id: current_user.id) %>
+              </li>
+              <li class = "menu-end-logout">
+                <%= link_to 'ログアウト', logout_path, method: :delete,data: {confirm: '本当にログアウトしますか？'} %>
+              </li>
+            <% else %>
+              <li class = "menu-right">
+                <%= link_to '新規USER', new_user_path %>
+              </li>
+              <li class = "menu-right">
+                <%= link_to 'ログイン', login_path %>
+              </li>
+              <li class = "menu-right-end">
+                <%= link_to 'top', root_path %>
+              </li>
+            <% end %>
+          </ul>
         </div>
         <div class = "header-down">
           <%= link_to image_tag('rogo2.png', class:'rogo-img'), root_path %>
@@ -62,7 +61,8 @@
                 <li onclick=formSwitch()><%= f.radio_button :how_search, 'raiting' %>評価検索</li>
                 <li onclick=formSwitch()><%= f.radio_button :how_search, 'junle' %>ジャンル検索</i>
               </ul>
-              <label><%= f.submit :検索, class: 'search-btn'%></label>
+              
+              <div><%= f.submit :検索, class: 'search-btn'%></div>
             </div>
           <% end %>
         </div>

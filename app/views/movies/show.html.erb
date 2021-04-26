@@ -61,7 +61,7 @@
           });
           </script>
           
-        <p>あらすじ:</p>
+        <p class = 'summary-name'>あらすじ:</p>
         <p class='detail-summary'><%= @movie.summary %></p>
         <div class='movie-show-link'>
           <i class="far fa-share-square"></i>
@@ -74,7 +74,6 @@
             </div>
           <% end %>
           <div>
-          
           </div>
         </div>
       </div>
@@ -85,7 +84,7 @@
       <div class=comment-index-wrapper>
         <div class="comment-upper">
           <div class="comment-upper-left">
-            <div class="commnet-name">
+            <div class="comment-name">
               <h3><%= comment.user.name %>さんのコメント</h3>
             </div>
             <div class="comment-update">
