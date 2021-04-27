@@ -47,24 +47,26 @@
         </div>
         <div class = "header-down">
           <%= link_to image_tag('rogo2.png', class:'rogo-img'), root_path %>
-          <%= form_with(url: search_path, method: :get, local: true) do |f| %>
-            <div class = "search-wrapper">
-              <%= f.text_field :search, class: 'search-form', id: 'search-1' %>
-              <%= f.select :rate_search, @list, {include_blank:'選択してください'}, {class: 'search-form',id: 'search-2'} %>
-              <ul class = "menu-down-left"> 
-                <li onclick=formSwitch()><%= f.radio_button :how_search, 'movie' ,checked: true %>映画検索</li>
-                <li onclick=formSwitch()><%= f.radio_button :how_search, 'cast' %>CAST検索</li>
-                <li onclick=formSwitch()><%= f.radio_button :how_search, 'user' %>USER検索</li>
-              </ul>
-              <ul class = "menu-down-right">
-                <li onclick=formSwitch()><%= f.radio_button :how_search, 'director' %>監督検索</li>
-                <li onclick=formSwitch()><%= f.radio_button :how_search, 'raiting' %>評価検索</li>
-                <li onclick=formSwitch()><%= f.radio_button :how_search, 'junle' %>ジャンル検索</i>
-              </ul>
-              <div><%= f.submit :検索, class: 'search-btn'%>
+          <div class = "search-form-wraper">
+            <%= form_with(url: search_path, method: :get, local: true) do |f| %>
+              <div class = "search-wrapper">
+                <%= f.text_field :search, class: 'search-form', id: 'search-1' %>
+                <%= f.select :rate_search, @list, {include_blank:'選択してください'}, {class: 'search-form',id: 'search-2'} %>
+                <ul class = "menu-down-left"> 
+                  <li onclick=formSwitch()><%= f.radio_button :how_search, 'movie' ,checked: true %>映画検索</li>
+                  <li onclick=formSwitch()><%= f.radio_button :how_search, 'cast' %>CAST検索</li>
+                  <li onclick=formSwitch()><%= f.radio_button :how_search, 'user' %>USER検索</li>
+                </ul>
+                <ul class = "menu-down-right">
+                  <li onclick=formSwitch()><%= f.radio_button :how_search, 'director' %>監督検索</li>
+                  <li onclick=formSwitch()><%= f.radio_button :how_search, 'raiting' %>評価検索</li>
+                  <li onclick=formSwitch()><%= f.radio_button :how_search, 'junle' %>ジャンル検索</i>
+                </ul>
+                <div><%= f.submit :検索, class: 'search-btn'%>
+                </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
       <script>

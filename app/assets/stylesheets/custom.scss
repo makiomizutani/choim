@@ -94,10 +94,14 @@ ul{
       margin-top: 15px;
       margin-left: 130px;
     }
-    
+    .search-form-wraper{
+      width:100%;
+      height:100%;
+    }
     .search-wrapper{
       width: 100%;
       display: flex;
+      align-items: center;
     }
       .search-form{
         height: 35px;
