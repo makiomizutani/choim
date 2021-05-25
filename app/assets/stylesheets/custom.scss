@@ -22,7 +22,7 @@ a{
 }
 body{
 font-family: "Hiragino Kaku Gothic ProN";
-  background-image: url('white_2.jpg');
+background-image: image-url('white_2.jpg');
 }
 ul{
   list-style: none; 
@@ -84,7 +84,8 @@ ul{
   .header-down{
     height: 110px;
     width: 100%;
-    background-image: url('black_1.jpg');
+    background-image: image-url('black_1.jpg');
+   
     display: flex;
   }
     .rogo-img{
