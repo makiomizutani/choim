@@ -43,7 +43,6 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
-  gem 'dotenv-rails'
 end
 
 group :development do
@@ -56,8 +55,8 @@ group :development do
   
 end
 
-group :production do
-  gem 'pg'
+group :production, :staging do
+    gem 'unicorn'
 end
 
 group :test do
@@ -77,5 +76,5 @@ gem 'carrierwave'
 gem 'kaminari'
 gem 'font-awesome-sass'
 gem 'fog-aws'
-
-
+gem 'mini_racer'
+gem 'dotenv-rails'
