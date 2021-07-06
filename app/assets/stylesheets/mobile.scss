@@ -66,6 +66,7 @@
       margin-left: 0px;
       position: absolute;
       top: 40%;
+      font-size: 1px;
       
       
     }
@@ -85,6 +86,11 @@
       margin-bottom: 0px;
       
     }
+    .menu-down-left label{
+      font-size: 10px;
+      margin-bottm: 0px;
+      font-weight: normal !important;
+    }
   
     .menu-down-right{
       margin-left: 8px;
@@ -98,6 +104,11 @@
     }
       .menu-down-right li{
         margin-bottom: 0px;
+      }
+      .menu-down-right label{
+      font-size: 10px;
+      margin-bottm: 0px;
+      font-weight: normal !important;
       }
     
     .btn-wrapper{

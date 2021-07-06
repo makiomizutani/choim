@@ -13,46 +13,39 @@ class MoviesController < ApplicationController
   end
   
   def search 
-    
     @search_name = params[:search]
     if params[:how_search] == 'movie'
       movie = Movie.where('name like ?', "%#{params[:search]}%")
       @movies = movie.page(params[:page]).per(8)
       
     elsif params[:how_search] == 'cast'
-      actor = Actor.where('name like ?', "%#{params[:search]}%")
-      if actor.present?
-        if actor.length == 1
-          @movies = actor.movies.page(params[:page]).per(8)
-        else
-          actor_ids = []
-          actor.each {|a| actor_ids.push(a.id)}  
-          @movies = Movie.joins(:movie_actors).where('actor_id IN(?)', actor_ids).page(params[:page]).per(8)
-        end
+      actors = Actor.where('name like ?', "%#{params[:search]}%")
+      if actors.present?
+        actor_ids = []
+        actors.each {|a| actor_ids.push(a.id)}  
+        @movies = Movie.joins(:movie_actors).where('actor_id IN(?)', actor_ids).page(params[:page]).per(8)
       else
         @movies = []
       end
       #@movies = Movie.select('movie.name').joins(:movie_actors,:actors).where(actors.name =>'ダニエル・ラドクリフ')
       
     elsif params[:how_search] == 'user'
-      user = User.where('name like ?', "%#{params[:search]}%")
+      user = User.find_by('name like ?', "%#{params[:search]}%")
       if user.present?
         @movies = user.movies.page(params[:page]).per(8)
       else
         @movies = []
       end
         
-      
-      
     elsif params[:how_search] == 'director'
-      director = Director.where('name like ?', "%#{params[:search]}%")
-      if director.present?
-        @movies = director.movies.page(params[:page]).per(8)
+      directors = Director.where('name like ?', "%#{params[:search]}%")
+      if directors.present?
+        director_ids = []
+        directors.each{ |a| director_ids.push(a.id)}
+        @movies = Movie.joins(:movie_directors).where('director_id IN(?)', director_ids).page(params[:page]).per(8)
       else
         @movies = []
       end
-      
-     
     elsif params[:how_search] =='raiting'
       avg = Comment.group(:movie_id).average(:rate)
       rate = params[:rate_search].to_i
